@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-algorithm_type",
+      "2": "I-algorithm_type",
+      "3": "L-algorithm_type",
+      "4": "U-algorithm_type",
+      "5": "B-search_algorithm",
+      "6": "I-search_algorithm",
+      "7": "L-search_algorithm",
+      "8": "U-search_algorithm",
+      "9": "B-sort_algorithm",
+      "10": "I-sort_algorithm",
+      "11": "L-sort_algorithm",
+      "12": "U-sort_algorithm",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-algorithm_type": 1,
+      "I-algorithm_type": 2,
+      "L-algorithm_type": 3,
+      "U-algorithm_type": 4,
+      "B-search_algorithm": 5,
+      "I-search_algorithm": 6,
+      "L-search_algorithm": 7,
+      "U-search_algorithm": 8,
+      "B-sort_algorithm": 9,
+      "I-sort_algorithm": 10,
+      "L-sort_algorithm": 11,
+      "U-sort_algorithm": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

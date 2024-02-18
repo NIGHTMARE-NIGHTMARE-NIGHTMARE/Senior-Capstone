@@ -1,0 +1,22 @@
+{
+  "linear search": "linear search",
+  "linear": "linear",
+  "binary search": "binary search",
+  "binary": "binary",
+  "dfs": "dfs",
+  "bfs": "bfs",
+  "depth first search": "depth first search",
+  "bredth first search": "bredth first search",
+  "breth first search": "breth first search",
+  "quick sort": "quick sort",
+  "quick": "quick",
+  "insertion sort": "insertion sort",
+  "insertion": "insertion",
+  "bubble sort": "bubble sort",
+  "bubble": "bubble",
+  "mergre sort": "mergre sort",
+  "mergre": "mergre",
+  "heap sort": "heap sort",
+  "heap": "heap",
+  "merge sort": "merge sort"
+}

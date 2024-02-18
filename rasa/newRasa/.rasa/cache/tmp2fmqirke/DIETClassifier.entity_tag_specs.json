@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-algorithm_type",
+      "2": "I-algorithm_type",
+      "3": "L-algorithm_type",
+      "4": "U-algorithm_type",
+      "5": "B-seach_algorithm",
+      "6": "I-seach_algorithm",
+      "7": "L-seach_algorithm",
+      "8": "U-seach_algorithm",
+      "9": "B-search_algoorithm",
+      "10": "I-search_algoorithm",
+      "11": "L-search_algoorithm",
+      "12": "U-search_algoorithm",
+      "13": "B-search_algorithm",
+      "14": "I-search_algorithm",
+      "15": "L-search_algorithm",
+      "16": "U-search_algorithm",
+      "17": "B-sort_algorithm",
+      "18": "I-sort_algorithm",
+      "19": "L-sort_algorithm",
+      "20": "U-sort_algorithm",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-algorithm_type": 1,
+      "I-algorithm_type": 2,
+      "L-algorithm_type": 3,
+      "U-algorithm_type": 4,
+      "B-seach_algorithm": 5,
+      "I-seach_algorithm": 6,
+      "L-seach_algorithm": 7,
+      "U-seach_algorithm": 8,
+      "B-search_algoorithm": 9,
+      "I-search_algoorithm": 10,
+      "L-search_algoorithm": 11,
+      "U-search_algoorithm": 12,
+      "B-search_algorithm": 13,
+      "I-search_algorithm": 14,
+      "L-search_algorithm": 15,
+      "U-search_algorithm": 16,
+      "B-sort_algorithm": 17,
+      "I-sort_algorithm": 18,
+      "L-sort_algorithm": 19,
+      "U-sort_algorithm": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]

@@ -1,34 +1,74 @@
 version: "3.1"
 
+entities:
+  - linear
+  - binary
+  - dfs
+  - depth first search
+  - bfs
+  - bredth first search
+  - breth first search
+  - breath first search
+  - quicksort
+  - insertion
+  - bubble 
+  - heap
+  - search
+  - sort
+  - search_algorithm
+  - sort_algorithm
+  - algorithm_type
+
+
 intents:
   - greet
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
   - bot_challenge
-
+  - out_of_scope
+  - search_algorithm_definition
+  - sort_algorithm_definition
+  - linear_search
+  - binary_search
+  - dfs_search
+  - bfs_search
+  - quicksort
+  - insertion_sort
+  - bubble_sort
+  - merge_sort
+  - heap_sort
+  
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_greet_and_algo_types:
+  - text: "Hey!\nWould you like to learn about search algorithms or sort algorithms?"
 
   utter_goodbye:
   - text: "Bye"
 
+  utter_out_of_scope:
+  - text: "Sorry, I can't handle that request. Do you want help with something else?"
+
+  utter_can_i_do_anything_else:
+  - text: "Can I help with anything else?"
+
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "I am a bot, powered by Rasa. I'm doing the best I can..."
+
+  utter_search_definition_and_pick_type:
+  - text: "In computer science, a search algorithm is an algorithm designed to solve a search problem. \nSearch algorithms work to retrieve information stored within particular data structure,\nor calculated in the search space of a problem domain, with either discrete or continuous values.\n\nHere are the options:\n - Linear Search\n - Binary Search\n - Depth First Search (DFS)\n - Bredth First Search (BFS)\nPlease pick one you want to learn."
+
+  utter_sort_definition_and_pick_type:
+  - text: "In computer science, a sorting algorithm is an algorithm that puts elements of a list into an order.\nThe most frequently used orders are numerical order and lexicographical order,\nand either ascending or descending.\nHere are the options:\n - Quicksort\n - Insertion Sort\n - Bubble Sort\n - Merge Sort\n - Heap Sort\nPlease pick one you want to learn."
+
+  utter_linear_definition_and_more_info_question: 
+  - text: "In computer science, linear search or sequential search is a method for finding an element \nwithin a list. It sequentially checks each element of the list until a match is found or the \nwhole list has been searched.\n\nDo you want more information on this?"
+
+  utter_quick_definition_and_more_info_question:
+  - text: "Quicksort is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. For this reason, it is sometimes called partition-exchange sort."
+
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+

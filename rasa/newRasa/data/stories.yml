@@ -2,29 +2,32 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: quicksort algorithm 
   steps:
   - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
+  - action: utter_greet_and_algo_types
+  - intent: sort_algorithm_definition
+  - action: utter_sort_definition_and_pick_type
+  - intent: quicksort
+  - action: utter_quick_definition_and_more_info_question
+  - intent: deny
+  - action: utter_can_i_do_anything_else
   - intent: affirm
-  - action: utter_happy
+  - action: utter_greet_and_algo_types
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+  - intent: deny
+  - action: utter_goodbye
 
-- story: sad path 2
+- story: linear search algorithm
   steps:
   - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
+  - action: utter_greet_and_algo_types
+  - intent: search_algorithm_definition
+  - action: utter_search_definition_and_pick_type
+  - intent: linear_search
+  - action: utter_linear_definition_and_more_info_question
+  - intent: deny
+  - action: utter_can_i_do_anything_else
   - intent: deny
   - action: utter_goodbye
