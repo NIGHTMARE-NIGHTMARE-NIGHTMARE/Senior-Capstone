@@ -2,32 +2,50 @@ version: "3.1"
 
 stories:
 
-- story: quicksort algorithm 
-  steps:
-  - intent: greet
-  - action: utter_greet_and_algo_types
-  - intent: sort_algorithm_definition
-  - action: utter_sort_definition_and_pick_type
-  - intent: quicksort
-  - action: utter_quick_definition_and_more_info_question
-  - intent: deny
-  - action: utter_can_i_do_anything_else
-  - intent: affirm
-  - action: utter_greet_and_algo_types
-  - intent: out_of_scope
-  - action: utter_out_of_scope
-  - intent: deny
-  - action: utter_goodbye
+# - story: quicksort algorithm 
+#   steps:
+#   - intent: greet
+#   - action: utter_greet_and_algo_types
+#   - intent: sort_algorithm_definition
+#   - action: utter_sort_definition_and_pick_type
+#   - intent: quicksort
+#   - action: utter_quick_definition_and_more_info_question
+#   - intent: deny
+#   - action: utter_can_i_do_anything_else
+#   - intent: affirm
+#   - action: utter_greet_and_algo_types
+#   - intent: out_of_scope
+#   - action: utter_out_of_scope
+#   - intent: deny
+#   - action: utter_goodbye
 
-- story: linear search algorithm
+# - story: linear search algorithm
+#   steps:
+#   - intent: greet
+#   - action: utter_greet_and_algo_types
+#   - intent: search_algorithm_definition
+#   - action: utter_search_definition_and_pick_type
+#   - intent: linear_search
+#   - action: utter_linear_definition_and_more_info_question
+#   - intent: deny
+#   - action: utter_can_i_do_anything_else
+#   - intent: deny
+#   - action: utter_goodbye
+
+- story: user chooses category and algorithm
   steps:
-  - intent: greet
-  - action: utter_greet_and_algo_types
-  - intent: search_algorithm_definition
-  - action: utter_search_definition_and_pick_type
-  - intent: linear_search
-  - action: utter_linear_definition_and_more_info_question
-  - intent: deny
-  - action: utter_can_i_do_anything_else
-  - intent: deny
-  - action: utter_goodbye
+    - intent: greet
+    - action: utter_greet
+    - intent: choose_category
+    - action: utter_choose_category
+    - intent: select_algorithm
+      entities:
+      - algorithm: "binary search"
+    - action: utter_algorithm_definition
+
+- story: user chooses to exit
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: deny
+    - action: utter_goodbye

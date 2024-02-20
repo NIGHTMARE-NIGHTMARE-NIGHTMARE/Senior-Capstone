@@ -1,71 +1,126 @@
 version: "3.1"
 
-entities:
-  - linear
-  - binary
-  - dfs
-  - depth first search
-  - bfs
-  - bredth first search
-  - breth first search
-  - breath first search
-  - quicksort
-  - insertion
-  - bubble 
-  - heap
-  - search
-  - sort
-  - search_algorithm
-  - sort_algorithm
-  - algorithm_type
+# entities:
+#   - search
+#   - sort
+#   # - linear
+#   # - binary
+#   # - dfs
+#   # - depth first search
+#   # - bfs
+#   # - bredth first search
+#   # - breth first search
+#   # - breath first search
+#   # - quicksort
+#   # - insertion
+#   # - bubble 
+#   # - heap
+#   # - search
+#   # - sort
+#   # - search_algorithm
+#   # - sort_algorithm
+#   # - algorithm_type
 
+
+# intents:
+#   - greet
+#   - goodbye
+#   - affirm
+#   - deny
+#   - bot_challenge
+#   - out_of_scope
+#   - algorithm_category
+#   # - search_algorithm_definition
+#   # - sort_algorithm_definition
+#   # - linear_search
+#   # - binary_search
+#   # - dfs_search
+#   # - bfs_search
+#   # - quicksort
+#   # - insertion_sort
+#   # - bubble_sort
+#   # - merge_sort
+#   # - heap_sort
+  
+# responses:
+#   utter_greet_and_algo_types:
+#   - text: "Hey!\nWould you like to learn about search algorithms or sort algorithms?"
+
+#   utter_goodbye:
+#   - text: "Bye"
+
+#   utter_out_of_scope:
+#   - text: "Sorry, I can't handle that request. Do you want help with something else?"
+
+#   utter_can_i_do_anything_else:
+#   - text: "Can I help with anything else?"
+
+#   utter_iamabot:
+#   - text: "I am a bot, powered by Rasa. I'm doing the best I can..."
+
+#   utter_search_definition_and_pick_type:
+#   - text: "In computer science, a search algorithm is an algorithm designed to solve a search problem. \nSearch algorithms work to retrieve information stored within particular data structure,\nor calculated in the search space of a problem domain, with either discrete or continuous values.\n\nHere are the options:\n - Linear Search\n - Binary Search\n - Depth First Search (DFS)\n - Bredth First Search (BFS)\nPlease pick one you want to learn."
+
+#   utter_sort_definition_and_pick_type:
+#   - text: "In computer science, a sorting algorithm is an algorithm that puts elements of a list into an order.\nThe most frequently used orders are numerical order and lexicographical order,\nand either ascending or descending.\nHere are the options:\n - Quicksort\n - Insertion Sort\n - Bubble Sort\n - Merge Sort\n - Heap Sort\nPlease pick one you want to learn."
+
+#   utter_linear_definition_and_more_info_question: 
+#   - text: "In computer science, linear search or sequential search is a method for finding an element \nwithin a list. It sequentially checks each element of the list until a match is found or the \nwhole list has been searched.\n\nDo you want more information on this?"
+
+#   utter_quick_definition_and_more_info_question:
+#   - text: "Quicksort is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. For this reason, it is sometimes called partition-exchange sort."
 
 intents:
   - greet
-  - goodbye
+  - choose_category
+  - select_algorithm
   - affirm
   - deny
-  - bot_challenge
-  - out_of_scope
-  - search_algorithm_definition
-  - sort_algorithm_definition
-  - linear_search
-  - binary_search
-  - dfs_search
-  - bfs_search
-  - quicksort
-  - insertion_sort
-  - bubble_sort
-  - merge_sort
-  - heap_sort
-  
+  - thank
+
+entities:
+  - category
+  - algorithm
+
 responses:
-  utter_greet_and_algo_types:
-  - text: "Hey!\nWould you like to learn about search algorithms or sort algorithms?"
+  utter_greet:
+    - text: "Hello! Do you want to learn about search or sort algorithms?"
+
+  utter_choose_category:
+    - text: "Great! Which category of algorithms would you like to learn about? Please choose either search or sort."
+
+  utter_select_algorithm:
+    - text: "Sure! Here are some algorithms in the category you selected:"
+
+  utter_algorithm_definition:
+    - text: "The definition of the algorithm will be displayed here."
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "Goodbye! If you have any more questions, feel free to ask."
 
-  utter_out_of_scope:
-  - text: "Sorry, I can't handle that request. Do you want help with something else?"
+actions:
+- utter_greet
+- utter_choose_category
+- utter_select_algorithm
+- utter_algorithm_definition
+- utter_goodbye
 
-  utter_can_i_do_anything_else:
-  - text: "Can I help with anything else?"
+slots:
+  category:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: category
+  algorithm:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: algorithm
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa. I'm doing the best I can..."
+templates:
+  utter_ask_continue:
+    - text: "Do you want to continue?"
 
-  utter_search_definition_and_pick_type:
-  - text: "In computer science, a search algorithm is an algorithm designed to solve a search problem. \nSearch algorithms work to retrieve information stored within particular data structure,\nor calculated in the search space of a problem domain, with either discrete or continuous values.\n\nHere are the options:\n - Linear Search\n - Binary Search\n - Depth First Search (DFS)\n - Bredth First Search (BFS)\nPlease pick one you want to learn."
-
-  utter_sort_definition_and_pick_type:
-  - text: "In computer science, a sorting algorithm is an algorithm that puts elements of a list into an order.\nThe most frequently used orders are numerical order and lexicographical order,\nand either ascending or descending.\nHere are the options:\n - Quicksort\n - Insertion Sort\n - Bubble Sort\n - Merge Sort\n - Heap Sort\nPlease pick one you want to learn."
-
-  utter_linear_definition_and_more_info_question: 
-  - text: "In computer science, linear search or sequential search is a method for finding an element \nwithin a list. It sequentially checks each element of the list until a match is found or the \nwhole list has been searched.\n\nDo you want more information on this?"
-
-  utter_quick_definition_and_more_info_question:
-  - text: "Quicksort is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. For this reason, it is sometimes called partition-exchange sort."
 
 
 session_config:
