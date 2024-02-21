@@ -1,4 +1,4 @@
-# version: "3.1"
+version: "3.1"
 
 nlu:
   - intent: greet
@@ -9,7 +9,6 @@ nlu:
       - hello there
       - good morning
       - good evening
-      - moin
       - hey there
       - let's go
       - hey dude
@@ -111,17 +110,52 @@ nlu:
       - what is the purpose of life
       - does it use actual bubbles
 
-- intent: choose_category
-  examples: |
-    - I want to learn about [search](category)
-    - Can you tell me about [sort](category) algorithms?
-    - What are the [search](category) algorithms you know?
-    - Show me [sort](category) algorithms
+  - intent: choose_category
+    examples: |
+      - I want to learn about [search](category)
+      - Can you tell me about [sort](category) algorithms?
+      - What are the [search](category) algorithms you know?
+      - Show me [sort](category) algorithms
+      - do you know about [search](category) algorithms
+      - how about [sort](category)
+      - I don't understand [search](category) algorithms
+      - I need to know [search](category) algorithms
+      - I wanna go over [sort](category) algorithms
 
-- intent: select_algorithm
-  examples: |
-    - I choose [binary search](algorithm)
-    - Let's learn about [merge sort](algorithm)
-    - [Quick sort](algorithm)
-    - [Linear search](algorithm)
+  - intent: select_algorithm
+    examples: |
+      - I choose [binary](algorithm) search
+      - Describe [linear](algorithm) search
+      - Let's learn about [merge](algorithm) sort
+      - Can you go into detail about [dfs](algorithm)
+      - What is [bfs](algorithm)
+      - [bredth first](algorithm) search
+      - [depth first](algorithm) search
+      - What the heck is [quicksort](algorithm)
+      - I'd like to do [quick sort](algorithm)
+      - How about [merge](algorithm) sort
+      - Go over [bubble](algorithm)
+      - I need to learn [heap](algorithm) sort
+      - I'm confused about [insertion](algorithm) sort
+      
 
+entities:
+  - category:
+    examples: |
+      - search
+      - sort
+
+  - algorithm:
+    examples: |
+      - binary
+      - linear search
+      - bfs
+      - dfs
+      - bredth first
+      - dfs
+      - depth first
+      - quicksort
+      - quick sort
+      - heap sort
+      - merge sort
+      - bubble sort

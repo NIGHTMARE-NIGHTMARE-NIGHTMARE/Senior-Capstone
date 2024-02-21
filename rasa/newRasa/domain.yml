@@ -16,17 +16,17 @@ entities:
 
 responses:
   #! Hard code greeting to be at top
-  # utter_pick_category:
-  #   - text: "Hello! Do you want to learn about search or sort algorithms? We have data for definitions, ps...."
+  utter_choose_category:
+    - text: "Do you want to learn about search or sort algorithms? We have data for definitions, pseudocode, visuals, and additional resources."
 
   utter_category_definition:
     - text: "The definition of {category} is: {definition}. Would you like to see some specific kinds?"
 
   utter_search_algorithms:
-    - text: "Sure! Here are some search algorithms: \n\t- Linear Search\n\t- Binary Search"
+    - text: "Sure! Here are some search algorithms: \n\t- Linear Search\n\t- Binary Search\n\t- Bredth First Search (BFS)\n\t- Depth First Search (DFS)"
 
   utter_sort_algorithms:
-    - text: "Sure! Here are some sort arch algorithms:\n\t- Quicksort\n\t- Heap Sort"
+    - text: "Sure! Here are some sort algorithms:\n\t- Quicksort\n\t- Heap Sort\n\t- Merge Sort\n\t- Bubble Sort\t\n- Insertion Sort"
 
   utter_algorithm_definition:
     - text: "The definition of {algorithm} is: {definition}."
@@ -35,25 +35,45 @@ responses:
     - text: "Would you like to see an example visual?"
 
   utter_visual:
-    - link: "[LINK HERE]"
+    - text: "{gif}"
 
   utter_ask_pseudocode:
-    - text: "Would you like to see pseudocode for {algorithm}?"
+    - text: "Would you like to see the pseudocode for {algorithm}?"
 
-  utter_pseudocode:
-    - text: "Here is the pseudocode for {algorithm}: [PSEUDOCODE HERE]"
+  utter_show_pseudocode:
+    - text: "Here is the pseudocode for {algorithm}: {pseudocode}"
 
   utter_ask_additional_resources:
+    - text: "Would you like additional resources?"
+
+  utter_additional_resources:
+    - text: "Here are some more resources for {algorithm}: "
+      # text: "{resources}"
 
   utter_goodbye:
     - text: "Goodbye! If you have any more questions, feel free to ask."
 
+  utter_i_am_a_bot:
+    - text: "I am a bot. I am doing the best I can..."
+
+  utter_out_of_scope:
+    - text: "That is out of the scope of this lesson. Please get back on track you slacker."
+
 actions:
-  - utter_greet
-  - utter_choose_category
-  - utter_select_algorithm
+  - utter_category_definition
+  - utter_search_algorithms
+  - utter_sort_algorithms
   - utter_algorithm_definition
+  - utter_ask_visual
+  - utter_visual
+  - utter_ask_pseudocode
+  - utter_show_pseudocode
+  - utter_ask_additional_resources
+  - utter_additional_resources
   - utter_goodbye
+  - utter_i_am_a_bot
+  - utter_out_of_scope
+  # - utter_greet
 
 slots:
   category:
@@ -66,10 +86,104 @@ slots:
     mappings:
       - type: from_entity
         entity: algorithm
+  definition:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: algorithm
+        value: "ls definition"
+      - type: from_entity
+        entity: algorithm
+        value: "bs definition"
 
 templates:
   utter_ask_continue:
     - text: "Do you want to continue?"
+
+definitions:
+  search_algorithm:
+    definition: "search definition"
+  sort_algorithm:
+    definition: "sort definition"
+  # linear_search:
+  #   definition: "ls definition"
+  # binary_search:
+  #   definition: "bs definition"
+  bfs:
+    definition: "bfs definition"
+  dfs:
+    definition: "dfs definition"
+  quicksort:
+    definition: "qs definition"
+  heap_sort:
+    definition: "hs definition"
+  merge_sort:
+    definition: "ms definition"
+  bubble_sort:
+    definition: "bs definition"
+  insertion_sort:
+    definition: "is definition"
+
+pseudocodes:
+  linear_search:
+    pseudocode: "ls pseudocode"
+  binary_search:
+    pseudocode: "bs pseudocode"
+  bfs:
+    pseudocode: "bfs pseudocode"
+  dfs:
+    pseudocode: "dfs pseudocode"
+  quicksort:
+    pseudocode: "qs pseudocode"
+  heap_sort:
+    pseudocode: "hs pseudocode"
+  merge_sort:
+    pseudocode: "ms pseudocode"
+  bubble_sort:
+    pseudocode: "bs pseudocode"
+  insertion_sort:
+    pseudocode: "is pseudocode"
+
+# change
+gifs:
+  linear_search:
+    url: "ls gif"
+  binary_search:
+    url: "bs gif"
+  bfs:
+    url: "bfs gif"
+  dfs:
+    url: "dfs gif"
+  quicksort:
+    url: "qs gif"
+  heap_sort:
+    url: "hs gif"
+  merge_sort:
+    url: "ms gif"
+  bubble_sort:
+    url: "bs gif"
+  insertion_sort:
+    url: "is gif"
+
+resources:
+  linear_search:
+    url: "ls resource"
+  binary_search:
+    url: "bs resource"
+  bfs:
+    url: "bfs resource"
+  dfs:
+    url: "dfs resource"
+  quicksort:
+    url: "qs resource"
+  heap_sort:
+    url: "hs resource"
+  merge_sort:
+    url: "ms resource"
+  bubble_sort:
+    url: "bs resource"
+  insertion_sort:
+    url: "is resource"
 
 session_config:
   session_expiration_time: 60
