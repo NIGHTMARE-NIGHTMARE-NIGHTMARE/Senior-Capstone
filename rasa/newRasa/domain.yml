@@ -29,7 +29,7 @@ responses:
     - text: "Sure! Here are some sort algorithms:\n\t- Quicksort\n\t- Heap Sort\n\t- Merge Sort\n\t- Bubble Sort\t\n- Insertion Sort"
 
   utter_algorithm_definition:
-    - text: "The definition of {algorithm} is: {definition}."
+    - text: "The definition of {algorithm} {category} is: "
 
   utter_ask_visual:
     - text: "Would you like to see an example visual?"
@@ -38,16 +38,16 @@ responses:
     - text: "{gif}"
 
   utter_ask_pseudocode:
-    - text: "Would you like to see the pseudocode for {algorithm}?"
+    - text: "Would you like to see the pseudocode for {algorithm} {category}?"
 
   utter_show_pseudocode:
-    - text: "Here is the pseudocode for {algorithm}: {pseudocode}"
+    - text: "Here is the pseudocode for {algorithm} {category}: {pseudocode}"
 
   utter_ask_additional_resources:
     - text: "Would you like additional resources?"
 
   utter_additional_resources:
-    - text: "Here are some more resources for {algorithm}: "
+    - text: "Here are some more resources for {algorithm} {category}: "
       # text: "{resources}"
 
   utter_goodbye:
@@ -86,104 +86,17 @@ slots:
     mappings:
       - type: from_entity
         entity: algorithm
-  definition:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: algorithm
-        value: "ls definition"
-      - type: from_entity
-        entity: algorithm
-        value: "bs definition"
-
-templates:
-  utter_ask_continue:
-    - text: "Do you want to continue?"
 
 definitions:
-  search_algorithm:
-    definition: "search definition"
-  sort_algorithm:
-    definition: "sort definition"
-  # linear_search:
-  #   definition: "ls definition"
-  # binary_search:
-  #   definition: "bs definition"
-  bfs:
-    definition: "bfs definition"
-  dfs:
-    definition: "dfs definition"
-  quicksort:
-    definition: "qs definition"
-  heap_sort:
-    definition: "hs definition"
-  merge_sort:
-    definition: "ms definition"
-  bubble_sort:
-    definition: "bs definition"
-  insertion_sort:
-    definition: "is definition"
-
-pseudocodes:
-  linear_search:
-    pseudocode: "ls pseudocode"
-  binary_search:
-    pseudocode: "bs pseudocode"
-  bfs:
-    pseudocode: "bfs pseudocode"
-  dfs:
-    pseudocode: "dfs pseudocode"
-  quicksort:
-    pseudocode: "qs pseudocode"
-  heap_sort:
-    pseudocode: "hs pseudocode"
-  merge_sort:
-    pseudocode: "ms pseudocode"
-  bubble_sort:
-    pseudocode: "bs pseudocode"
-  insertion_sort:
-    pseudocode: "is pseudocode"
-
-# change
-gifs:
-  linear_search:
-    url: "ls gif"
-  binary_search:
-    url: "bs gif"
-  bfs:
-    url: "bfs gif"
-  dfs:
-    url: "dfs gif"
-  quicksort:
-    url: "qs gif"
-  heap_sort:
-    url: "hs gif"
-  merge_sort:
-    url: "ms gif"
-  bubble_sort:
-    url: "bs gif"
-  insertion_sort:
-    url: "is gif"
-
-resources:
-  linear_search:
-    url: "ls resource"
-  binary_search:
-    url: "bs resource"
-  bfs:
-    url: "bfs resource"
-  dfs:
-    url: "dfs resource"
-  quicksort:
-    url: "qs resource"
-  heap_sort:
-    url: "hs resource"
-  merge_sort:
-    url: "ms resource"
-  bubble_sort:
-    url: "bs resource"
-  insertion_sort:
-    url: "is resource"
+  linear: "Linear search is a search algorithm that sequentially checks each element in a list until the desired element is found or the end of the list is reached."
+  binary: "Binary search is a search algorithm that finds the position of a target value within a sorted array. It compares the target value to the middle element of the array and continues narrowing down the search range until the target is found or the search range is empty."
+  bfs: "Breadth-first search is a graph traversal algorithm that explores all the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level."
+  dfs: "Depth-first search is a graph traversal algorithm that explores as far as possible along each branch before backtracking."
+  quicksort: "Quicksort is a highly efficient sorting algorithm that uses a divide-and-conquer strategy to sort data."
+  heap: "Heap sort is a comparison-based sorting algorithm that builds a max heap from the data and repeatedly extracts the maximum element from it and rebuilds the heap until all the elements have been sorted."
+  merge: "Merge sort is a comparison-based sorting algorithm that divides the input array into two halves, recursively sorts each half, and then merges the sorted halves."
+  bubble: "Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order."
+  insertion: "Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time by repeatedly taking the next element and inserting it into the sorted portion of the array."
 
 session_config:
   session_expiration_time: 60

@@ -148,14 +148,14 @@ entities:
   - algorithm:
     examples: |
       - binary
-      - linear search
+      - linear
       - bfs
       - dfs
       - bredth first
       - dfs
       - depth first
       - quicksort
-      - quick sort
-      - heap sort
-      - merge sort
-      - bubble sort
+      - quick 
+      - heap 
+      - merge 
+      - bubble 
