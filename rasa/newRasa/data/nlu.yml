@@ -1,347 +1,115 @@
 # version: "3.1"
 
-# nlu:
-#   - intent: greet
-#     examples: |
-#       - hey
-#       - hello
-#       - hi
-#       - hello there
-#       - good morning
-#       - good evening
-#       - moin
-#       - hey there
-#       - let's go
-#       - hey dude
-#       - goodmorning
-#       - goodevening
-#       - good afternoon
-#       - whats up
-#       - what's up
-#       - hola
-#       - yo
-
-#   - intent: goodbye
-#     examples: |
-#       - cu
-#       - good by
-#       - cee you later
-#       - good night
-#       - bye
-#       - goodbye
-#       - have a nice day
-#       - see you around
-#       - bye bye
-#       - see you later
-#       - adios
-#       - talk to you later
-#       - later bro
-#       - see ya
-#       - bye-bye
-
-#   - intent: affirm
-#     examples: |
-#       - yes
-#       - y
-#       - indeed
-#       - of course
-#       - that sounds good
-#       - correct
-#       - yep
-#       - yup
-#       - yeah
-#       - sure
-#       - that would be great
-#       - i would like that
-#       - that would be helpful
-#       - sure thing
-#       - yea
-
-#   - intent: deny
-#     examples: |
-#       - no
-#       - n
-#       - never
-#       - I don't think so
-#       - don't like that
-#       - no way
-#       - not really
-#       - nah
-#       - no thanks
-#       - not right now
-#       - no thanks
-#       - no thank you
-#       - i don't want to
-#       - i'd rather not
-#       - not currently
-#       - not atm
-#       - no i'm good
-
-#   - intent: bot_challenge
-#     examples: |
-#       - are you a bot?
-#       - are you a human?
-#       - am I talking to a bot?
-#       - am I talking to a human?
-#       - you suck
-#       - you are not helpful
-#       - bruh
-#       - are you stupid
-#       - you are wrong
-#       - you make no sense
-#       - do you have feelings
-#       - you don't know what you're talking about
-
-#   - intent: out_of_scope
-#     examples: |
-#       - Who is Elvis
-#       - What is the weather
-#       - what is 2 + 2
-#       - are you my mom
-#       - my grandma died
-#       - how is milk made
-#       - how far away is the moon
-#       - what ingredients are in mac and cheese
-#       - how to i dispose of a body
-#       - who sings Fireworks
-#       - who is my dad
-#       - why am i always hungry
-#       - how many inches in a mile
-#       - how hot is the sun
-#       - what is the purpose of life
-#       - does it use actual bubbles
-
-
-
-#-------------------------------------------------------------------
-
-
-# - intent: search_algorithm_definition
-#   examples: |
-#     - What is a [search](algorithm_type) algorithm?
-#     - Explain [search](algorithm_type) algorithm
-#     - Tell me about [search](algorithm_type)
-#     - Define [search](algorithm_type) algorithm
-#     - What do you mean by [search](algorithm_type) algorithm?
-#     - Do you know about [search](algorithm_type) algorithm?
-#     - Whats a [search](algorithm_type) algorithm
-#     - What's a [search](algorithm_type) alforithm
-#     - Go in depth on [search](algorithm_type)
-#     - I wanna know about [search](algorithm_type)
-#     - I wanna go over [search](algorithm_type) algorithm
-#     - [search](algorithm_type)
-#     - [search](algorithm_type) algorithm would be great
-#     - how do i do [search](algorithm_type) algorithms
-#     - how do i execute [search](algorithm_type)
-
-# - intent: sort_algorithm_definition
-#   examples: |
-#     - What is a [sort](algorithm_type) algorithm?
-#     - Explain [sort](algorithm_type) algorithms
-#     - Tell me about [sort](algorithm_type)
-#     - Define [sort](algorithm_type) algorithms
-#     - What do you mean by [sort](algorithm_type) algorithms?
-#     - Do you know about [sort](algorithm_type) algorithms?
-#     - Whats a [sort](algorithm_type) algorithm
-#     - What's a [sort](algorithm_type) alforithm
-#     - Go in depth on [sort](algorithm_type)
-#     - [sort](algorithm_type)
-#     - [sort](algorithm_type) sounds interesing to me
-#     - how do i do [sort](algorithm_type) algorithms
-#     - how do i execute [sort](algorithm_type)
-
-# #[entity](type)
-# - intent: linear_search
-#   examples: |
-#     - what is [linear](search_algorithm)
-#     - what is [linear](search_algorithm) search
-#     - tell me about [linear](search_algorithm) search
-#     - How do you explain [linear](search_algorithm) search
-#     - what do you even know about [linear](search_algorithm)
-#     - what the heck is [linear](search_algorithm) search
-#     - explain [linear](search_algorithm)
-#     - whats [linear](search_algorithm) search
-#     - show me a [linear](search_algorithm) visual
-#     - what's [linear](search_algorithm) search
-#     - [linear](search_algorithm) search
-#     - [linear](search_algorithm)
-#     - summarize [insertion](search_algorithm)
-#     - teach me [linear](search_algorithm) search
-#     - i know nothing about [linear](search_algorithm)
-#     - i wanna learn [linear](search_algorithm) search
-#     - how do i do [linear](search_algorithm) search algorithms
-#     - how do i execute [linear](search_algorithm)
-
-# - intent: binary_search
-#   examples: |
-#     - explain [binary](search_algorithm) please and thanks
-#     - whats [binary](search_algorithm) search
-#     - tell me about [binary](search_algorithm) search
-#     - how do you explain [binary](search_algorithm)
-#     - what even is [binary](search_algorithm) search
-#     - how do you define [binary](search_algorithm)
-#     - [binary](search_algorithm)
-#     - i wanna know about [binary](search_algorithm) search
-#     - go over [binary](search_algorithm) search
-#     - can i see [binary](search_algorithm) search
-#     - teach me [binary](search_algorithm) search
-#     - what's [binary](search_algorithm)
-#     - i don't know [binary](search_algorithm) search
-#     - how to explain [binary](search_algorithm)
-#     - oh [binary](search_algorithm) search sounds interesting
-#     - how do i do [binary](search_algorithm) search algorithms
-#     - how do i execute [binary](search_algorithm)
-
-# - intent: dfs_search
-#   examples: |
-#     - describe [dfs](search_algorithm)
-#     - what do you mean by [depth first search](search_algorithm)
-#     - what even is [depth first search](search_algorithm)
-#     - [depth first search](search_algorithm) sounds interesting
-#     - explain [dfs](search_algorithm) to me please
-#     - define [depth first search](search_algorithm) algorithm for me
-#     - how do you define [dfs](search_algorithm)
-#     - i wanna know about [depth first search](search_algorithm)
-#     - what the heck is [depth first search](search_algorithm) (DFS) algorithm
-#     - i don't know anything about [dfs](search_algorithm)
-#     - teach me [depth first search](search_algorithm) please
-#     - are you able to describe [dfs](search_algorithm) to me generally
-#     - in general, what is [depth first search](search_algorithm)
-#     - [dfs](search_algorithm)
-#     - [depth first search](search_algorithm)
-#     - how do i do [dfs](search_algorithm)
-#     - how do i execute [depth first search](search_algorithm)
-
-# - intent: bfs_search
-#   examples: |
-#     - lets do [bfs](search_algorithm)
-#     - let's do [bredth first search](search_algorithm)
-#     - what about [breth first search](search_algorithm)
-#     - what do you know about [breath first search](search_algorithm)
-#     - im confused about [bfs](search_algorithm)
-#     - [bfs](search_algorithm)
-#     - show me psudeocode for [bfs](search_algorithm)
-#     - [bredth first search](search_algorithm)
-#     - do you know how to explain [bfs](search_algorithm)
-#     - what's the [bredth first search](search_algorithm) algorithm
-#     - go over [bfs](search_algorithm)
-#     - tell me about [breth first search](search_algorithm)
-#     - go ahead and do [bfs](search_algorithm)
-#     - i'd like [bredth first search](search_algorithm)
-#     - i wanna know what [bfs](search_algorithm) even means
-#     - how do i do [bredth first search](search_algorithm)
-#     - how do i execute [bfs](search_algorithm)
-
-# - intent: quicksort
-#   examples: |
-#     - how about [quicksort](sort_algorithm)
-#     - you know [quicksort](sort_algorithm)
-#     - explain to me [quicksort](sort_algorithm)
-#     - how do i do [quicksort](sort_algorithm) algorithms
-#     - how do i execute [quicksort](sort_algorithm)
-#     - inform me on [quicksort](sort_algorithm) algorithns
-#     - do you know [quicksort](sort_algorithm)
-#     - [quicksort](sort_algorithm) seems pretty interesting
-#     - go over [quicksort](sort_algorithm) for me
-#     - explain [quicksort](sort_algorithm) to me simply
-#     - i need to learn [quicksort](sort_algorithm) fast
-#     - [quicksort](sort_algorithm)
-#     - [quicksort](sort_algorithm) would be great thanks
-#     - do [quicksort](sort_algorithm) please
-#     - can you do [quicksort](sort_algorithm)
-#     - teach me [quicksort](sort_algorithm) ASAP
-
-# - intent: insertion_sort
-#   examples: |
-#     - how would you descibe [insertion](sort_algorithm)
-#     - how can i depict [insertion](sort_algorithm) sort
-#     - elaborate on [insertion](sort_algorithm) please
-#     - i don't know [insertion](sort_algorithm) yet
-#     - can we go over [insertion](sort_algorithm)
-#     - [insertion](sort_algorithm)
-#     - [insertion](sort_algorithm) sounds kinda interesting
-#     - i need to know [insertion](sort_algorithm) for my exam
-#     - can you summarize [insertion](sort_algorithm)
-#     - what abotu [insertion](sort_algorithm)
-#     - teach me [insertion](sort_algorithm)
-#     - how do i execute [insertion](sort_algorithm)
-#     - show me psudeo code for [insertion](sort_algorithm)
-#     - how is [insertion](sort_algorithm) done
-#     - depict [insertion](sort_algorithm) sort for me
-#     - summarize [insertion](sort_algorithm) sort
-#     - can i see a visual on [insertion](sort_algorithm) sort
-
-# - intent: bubble_sort
-#   examples: |
-#     - how should i define [bubble](sort_algorithm)
-#     - please define [bubble](sort_algorithm) sort
-#     - go into detail on [bubble](sort_algorithm) sort
-#     - what da heck is [bubble](sort_algorithm) sort
-#     - [bubble](sort_algorithm) sounds pretty cool
-#     - [bubble](sort_algorithm) sort will be on my exam
-#     - i dont really get [bubble](sort_algorithm) sort
-#     - [bubble](sort_algorithm) is confusing to me
-#     - [bubble](sort_algorithm) sounds funny. let's do that
-#     - is [bubble](sort_algorithm) complicated
-#     - id like to know [bubble](sort_algorithm) sort
-#     - describe [bubble](sort_algorithm)
-#     - i need to see code for [bubble](sort_algorithm) sort
-#     - move forward with [bubble](sort_algorithm)
-#     - [bubble](sort_algorithm)
-#     - lets do [bubble](sort_algorithm) sort
-#     - i'd like to try [bubble](sort_algorithm)
-#     - what is the definitino of [bubble](sort_algorithm) sort
-
-# - intent: merge_sort
-#   examples: |
-#     - define [merge](sort_algorithm)
-#     - elaborate on [merge](sort_algorithm) sort
-#     - i don't know [merge](sort_algorithm) very well
-#     - i have one week to learn about [merge](sort_algorithm) sort
-#     - help with [merge](sort_algorithm) sort understanding
-#     - [merge](sort_algorithm)
-#     - [merge](sort_algorithm) sort would be great
-#     - how do i do [merge](sort_algorithm) sort
-#     - do you have examples of [merge](sort_algorithm) sort
-#     - what about [merge](sort_algorithm)
-#     - ready, set, [merge](sort_algorithm) sort
-#     - i guess [merge](sort_algorithm)
-#     - ummmm let me pick [merge](sort_algorithm) sort
-#     - i think [merge](sort_algorithm) would be interesting
-#     - explain [merge](sort_algorithm) sort please
-#     - doing [merge](sort_algorithm) sort would be helpful
-#     - [merge](sort_algorithm) please and thanks
-
-# - intent: heap_sort
-#   examples: |
-#     - go into detail about [heap](sort_algorithm)
-#     - what the heck is [heap](sort_algorithm) sort
-#     - i needed to know [heap](sort_algorithm) sort like yesterday
-#     - id like to do [heap](sort_algorithm)
-#     - i struggle with [heap](sort_algorithm) sort the most
-#     - how should i do [heap](sort_algorithm)
-#     - what does [heap](sort_algorithm) sort look like
-#     - i don't really understand [heap](sort_algorithm)
-#     - are you able to explain [heap](sort_algorithm) sort
-#     - can you define [heap](sort_algorithm) for me
-#     - [heap](sort_algorithm)
-#     - i think [heap](sort_algorithm) would be useful
-#     - i find [heap](sort_algorithm) sort interesting
-#     - elaborate on [heap](sort_algorithm) please
-#     - [heap](sort_algorithm) sort would be cool
-#     - do you have anything on [heap](sort_algorithm) sort
-
-# --------------------------------------------------------------------
-
-version: "2.0"
-
 nlu:
-- intent: greet
-  examples: |
-    - hi
-    - hello
-    - hey
-    - hi there
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+      - whats up
+      - what's up
+      - hola
+      - yo
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+      - adios
+      - talk to you later
+      - later bro
+      - see ya
+      - bye-bye
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - yep
+      - yup
+      - yeah
+      - sure
+      - that would be great
+      - i would like that
+      - that would be helpful
+      - sure thing
+      - yea
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+      - nah
+      - no thanks
+      - not right now
+      - no thanks
+      - no thank you
+      - i don't want to
+      - i'd rather not
+      - not currently
+      - not atm
+      - no i'm good
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+      - you suck
+      - you are not helpful
+      - bruh
+      - are you stupid
+      - you are wrong
+      - you make no sense
+      - do you have feelings
+      - you don't know what you're talking about
+
+  - intent: out_of_scope
+    examples: |
+      - Who is Elvis
+      - What is the weather
+      - what is 2 + 2
+      - are you my mom
+      - my grandma died
+      - how is milk made
+      - how far away is the moon
+      - what ingredients are in mac and cheese
+      - how to i dispose of a body
+      - who sings Fireworks
+      - who is my dad
+      - why am i always hungry
+      - how many inches in a mile
+      - how hot is the sun
+      - what is the purpose of life
+      - does it use actual bubbles
 
 - intent: choose_category
   examples: |
@@ -357,22 +125,3 @@ nlu:
     - [Quick sort](algorithm)
     - [Linear search](algorithm)
 
-- intent: affirm
-  examples: |
-    - yes
-    - yeah
-    - sure
-    - absolutely
-
-- intent: deny
-  examples: |
-    - no
-    - nah
-    - not really
-    - I don't think so
-
-- intent: thank
-  examples: |
-    - thanks
-    - thank you
-    - thanks a lot
