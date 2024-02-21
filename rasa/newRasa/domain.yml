@@ -29,7 +29,7 @@ responses:
     - text: "Sure! Here are some sort algorithms:\n\t- Quicksort\n\t- Heap Sort\n\t- Merge Sort\n\t- Bubble Sort\t\n- Insertion Sort"
 
   utter_algorithm_definition:
-    - text: "The definition of {algorithm} {category} is: {{definitions[algorithm]}}"
+    - text: "The definition of {algorithm} {category} is: figure this s$!t out"
 
   utter_ask_visual:
     - text: "Would you like to see an example visual?"
