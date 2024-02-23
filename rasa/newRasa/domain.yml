@@ -29,7 +29,7 @@ responses:
     - text: "Sure! Here are some sort algorithms:\n\t- Quicksort\n\t- Heap Sort\n\t- Merge Sort\n\t- Bubble Sort\t\n- Insertion Sort"
 
   utter_algorithm_definition:
-    - text: "The definition of {algorithm} {category} is: figure this s$!t out"
+    - text: "The definition of {algorithm} {category} is: {definition}"
 
   utter_ask_visual:
     - text: "Would you like to see an example visual?"
@@ -87,16 +87,8 @@ slots:
       - type: from_entity
         entity: algorithm
 
-definitions:
-  linear: "Linear search is a search algorithm that sequentially checks each element in a list until the desired element is found or the end of the list is reached."
-  binary: "Binary search is a search algorithm that finds the position of a target value within a sorted array. It compares the target value to the middle element of the array and continues narrowing down the search range until the target is found or the search range is empty."
-  bfs: "Breadth-first search is a graph traversal algorithm that explores all the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level."
-  dfs: "Depth-first search is a graph traversal algorithm that explores as far as possible along each branch before backtracking."
-  quicksort: "Quicksort is a highly efficient sorting algorithm that uses a divide-and-conquer strategy to sort data."
-  heap: "Heap sort is a comparison-based sorting algorithm that builds a max heap from the data and repeatedly extracts the maximum element from it and rebuilds the heap until all the elements have been sorted."
-  merge: "Merge sort is a comparison-based sorting algorithm that divides the input array into two halves, recursively sorts each half, and then merges the sorted halves."
-  bubble: "Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order."
-  insertion: "Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time by repeatedly taking the next element and inserting it into the sorted portion of the array."
+imports:
+  - algorithm_info.py
 
 session_config:
   session_expiration_time: 60

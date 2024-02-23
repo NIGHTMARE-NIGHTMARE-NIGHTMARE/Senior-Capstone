@@ -28,3 +28,37 @@
 
 
 
+from typing import Any, Text, Dict, List
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+from algorithm_info import get_algorithm_info
+
+class UtterAlgorithmDefinition(Action):
+    def name(self) -> Text:
+        return "utter_algorithm_definition"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # Get the algorithm name from the tracker
+        algorithm_name = tracker.get_slot("algorithm")
+        
+        # Fetch algorithm info dynamically
+        algorithm_info = get_algorithm_info(algorithm_name)
+        
+        # Get definition, pseudocode, and resources from algorithm_info or set to "Not found."
+        definition = algorithm_info.get("definition", "Not found.")
+        pseudocode = algorithm_info.get("pseudocode", "Not found.")
+        resources = algorithm_info.get("resources", [])
+        
+        # Replace placeholders and send the response
+        dispatcher.utter_message(
+            template="utter_algorithm_definition",
+            algorithm=algorithm_name,
+            definition=definition,
+            pseudocode=pseudocode,
+            resources=resources
+        )
+
+        return []
