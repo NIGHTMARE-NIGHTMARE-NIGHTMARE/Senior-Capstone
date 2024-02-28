@@ -137,7 +137,17 @@ nlu:
       - Go over [bubble](algorithm)
       - I need to learn [heap](algorithm) sort
       - I'm confused about [insertion](algorithm) sort
-      
+
+  - intent: select_lesson
+    examples: |
+      - Go over the [definition](lesson)
+      - Can you show me [pseudocode](lesson)
+      - Show me more [resources](lesson)
+      - I need a [visual](lesson)
+      - [definition](lesson) would be great
+      - How about [pseudocode](lesson)
+      - I want to see a [visual](lesson)
+      - Give me additional [resources](lesson)
 
 entities:
   - category:
@@ -159,3 +169,9 @@ entities:
       - heap 
       - merge 
       - bubble 
+  - lesson:
+    examples: |
+      - definition
+      - pseudocode
+      - visual
+      - resources

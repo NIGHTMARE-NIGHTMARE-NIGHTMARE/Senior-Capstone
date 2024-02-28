@@ -1,65 +1,35 @@
 version: "3.1"
 
 stories:
-  - story: linear search
+  - story: linear
     steps:
-      - intent: choose_category
+      - intent: greet
       - action: utter_choose_category
-      - intent: select_algorithm
+      - intent: choose_category
         entities:
           - category: "search"
+      - action: utter_category
+      - action: utter_search_definition
       - action: utter_search_algorithms
       - intent: select_algorithm
         entities:
-          - algorithm: "linear_search"
+          - algorithm: "linear"
       - action: utter_algorithm_definition
+      - action: utter_linear_definition
+      - action: utter_more_info
       - intent: affirm
-      - action: utter_ask_pseudocode
+      - action: utter_algorithm_pseudocode
+      - action: utter_linear_pseudocode
+      - action: utter_more_info
       - intent: affirm
-      - action: utter_show_pseudocode
+      - action: utter_algorithm_visual
+      - action: utter_linear_visual
+      - action: utter_more_info
       - intent: affirm
-      - action: utter_ask_visual
-      - intent: affirm
-      - action: utter_visual
-      - intent: affirm
-      - action: utter_ask_additional_resources
-      - intent: affirm
-      - action: utter_additional_resources
+      - action: utter_algorithm_resources
+      - action: utter_linear_resources
+      - action: utter_no_more
+      - action: utter_goodbye
       - slot_was_set:
           - category: "search"
-          - algorithm: "linear_search"
-
-  - story: binary search
-    steps:
-      - intent: choose_category
-      - action: utter_choose_category
-      - intent: select_algorithm
-        entities:
-          - category: "search"
-      - action: utter_search_algorithms
-      - intent: select_algorithm
-        entities:
-          - algorithm: "binary_search"
-      - action: utter_algorithm_definition
-      - intent: affirm
-      - action: utter_ask_pseudocode
-      - intent: affirm
-      - action: utter_show_pseudocode
-      - intent: affirm
-      - action: utter_ask_visual
-      - intent: affirm
-      - action: utter_visual
-      - intent: affirm
-      - action: utter_ask_additional_resources
-      - intent: affirm
-      - action: utter_additional_resources
-      - slot_was_set:
-          - category: "search"
-          - algorithm: "binary_search"
-
-  # - story: user chooses to exit
-  #   steps:
-  #     - intent: greet
-  #     - action: utter_greet
-  #     - intent: deny
-  #     - action: utter_goodbye
+          - algorithm: "linear"

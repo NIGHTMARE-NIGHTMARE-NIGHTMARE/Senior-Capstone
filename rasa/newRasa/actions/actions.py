@@ -1,64 +1,47 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
-
-
-# This is a simple example for a custom action which utters "Hello World!"
-
 # from typing import Any, Text, Dict, List
-#
 # from rasa_sdk import Action, Tracker
 # from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
+# import random
+
+# class ActionSelectRandomLesson(Action):
 #     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
+#         return "action_select_random_lesson"
+
+#     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#         category = tracker.get_slot("category")
+#         algorithm = tracker.get_slot("algorithm")
+
+#         if category == "search":
+#             if algorithm == "linear":
+#                 lesson_options = ["definition", "visual", "resources"]
+#             elif algorithm == "binary":
+#                 lesson_options = ["definition", "visual", "resources"]
+#             elif algorithm == "bfs":
+#                 lesson_options = ["definition", "visual", "resources"]
+#             elif algorithm == "dfs":
+#                 lesson_options = ["definition", "visual", "resources"]
+#             else:
+#                 lesson_options = []
+#         elif category == "sort":
+#             if algorithm == "merge":
+#                 lesson_options = ["definition", "visual", "resources"]
+#             elif algorithm == "quicksort":
+#                 lesson_options = ["definition", "visual", "resources"]
+#             elif algorithm == "heap":
+#                 lesson_options = ["definition", "visual", "resources"]
+#             elif algorithm == "bubble":
+#                 lesson_options = ["definition", "visual", "resources"]
+#             elif algorithm == "insertion":
+#                 lesson_options = ["definition", "visual", "resources"]
+#             else:
+#                 lesson_options = []
+#         else:
+#             lesson_options = []
+
+#         if lesson_options:
+#             selected_lesson = random.choice(lesson_options)
+#             dispatcher.utter_message(template=f"utter_algorithm_{algorithm.replace(' ', '_')}_{selected_lesson}")
+#         else:
+#             dispatcher.utter_message("Sorry, I couldn't find any lessons for the selected algorithm.")
+
 #         return []
-
-
-
-from typing import Any, Text, Dict, List
-from rasa_sdk import Action, Tracker
-from rasa_sdk.executor import CollectingDispatcher
-from algorithm_info import get_algorithm_info
-
-class UtterAlgorithmDefinition(Action):
-    def name(self) -> Text:
-        return "utter_algorithm_definition"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        # Get the algorithm name from the tracker
-        algorithm_name = tracker.get_slot("algorithm")
-        
-        # Fetch algorithm info dynamically
-        algorithm_info = get_algorithm_info(algorithm_name)
-        
-        # Get definition, pseudocode, and resources from algorithm_info or set to "Not found."
-        definition = algorithm_info.get("definition", "Not found.")
-        pseudocode = algorithm_info.get("pseudocode", "Not found.")
-        resources = algorithm_info.get("resources", [])
-        
-        # Replace placeholders and send the response
-        dispatcher.utter_message(
-            template="utter_algorithm_definition",
-            algorithm=algorithm_name,
-            definition=definition,
-            pseudocode=pseudocode,
-            resources=resources
-        )
-
-        return []

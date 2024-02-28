@@ -9,71 +9,189 @@ intents:
   - out_of_scope
   - choose_category
   - select_algorithm
+  - select_lesson
 
 entities:
   - category
   - algorithm
+  - lesson
 
 responses:
   #! Hard code greeting to be at top
   utter_choose_category:
     - text: "Do you want to learn about search or sort algorithms? We have data for definitions, pseudocode, visuals, and additional resources."
 
-  utter_category_definition:
-    - text: "The definition of {category} is: {definition}. Would you like to see some specific kinds?"
+  utter_category:
+    - text: "The definition of {category} algorithm is: "
+
+  utter_search_definition:
+    - text: "This is search definition"
+
+  utter_sort_definition:
+    - text: "This is sort definition"
 
   utter_search_algorithms:
-    - text: "Sure! Here are some search algorithms: \n\t- Linear Search\n\t- Binary Search\n\t- Bredth First Search (BFS)\n\t- Depth First Search (DFS)"
+    - text: "Here are some search algorithms: \n\t- Linear Search\n\t- Binary Search\n\t- Bredth First Search (BFS)\n\t- Depth First Search (DFS) \nPlease select one to start!"
 
   utter_sort_algorithms:
-    - text: "Sure! Here are some sort algorithms:\n\t- Quicksort\n\t- Heap Sort\n\t- Merge Sort\n\t- Bubble Sort\t\n- Insertion Sort"
+    - text: "Sure! Here are some sort algorithms:\n\t- Quicksort\n\t- Heap Sort\n\t- Merge Sort\n\t- Bubble Sort\t\n- Insertion Sort \nPlease select one to start!"
+
+  utter_more_info:
+    - text: "Would you like to learn more on {algorithm} {category}?"
+    - text: "Do you want me to provide more information?"
+    - text: "Shall we keep going?"
+    - text: "Want more info?"
+    - text: "Should I keep going?"
+    - text: "Wanna keep learning about {algorithm} {category}?"
 
   utter_algorithm_definition:
-    - text: "The definition of {algorithm} {category} is: {definition}"
+    - text: "The definition of {algorithm} {category} is: "
+    - text: "Here is the definition of {algorithm} {category}:"
+    - text: "Let's define {algorithm} {category}: "
 
-  utter_ask_visual:
-    - text: "Would you like to see an example visual?"
+  utter_algorithm_pseudocode:
+    - text: "Here is the pseudocode for {algorithm} {category}: "
+    - text: "The pseudocode for {algorithm} {category} is:"
+    - text: "Below is the pseudocode for {algorithm} {category}."
 
-  utter_visual:
-    - text: "{gif}"
-
-  utter_ask_pseudocode:
-    - text: "Would you like to see the pseudocode for {algorithm} {category}?"
-
-  utter_show_pseudocode:
-    - text: "Here is the pseudocode for {algorithm} {category}: {pseudocode}"
-
-  utter_ask_additional_resources:
-    - text: "Would you like additional resources?"
-
-  utter_additional_resources:
+  utter_algorithm_resources:
     - text: "Here are some more resources for {algorithm} {category}: "
-      # text: "{resources}"
+    - text: "Here's a few external resources related to {algorithm} {category}:"
+    - text: "For more information on {algorithm} {category}, check out: "
+    - text: "More info on {algorithm} {category} can be found at: "
+
+  utter_algorithm_visual:
+    - text: "Do you want to see a visual on {algorithm} {category}?"
+    - text: "Wanna visual to see {algorithm} {category} in work?"
+    - text: "Should I show you a visual of what {algorithm} {category} looks like in practice?"
+
+  utter_linear_definition:
+    - text: "This is linear definition"
+
+  utter_linear_pseudocode:
+    - text: "This is linear pseudocode"
+
+  utter_linear_visual:
+    - text: "This is linear visual"
+
+  utter_linear_resources:
+    - text: "This is linear resources"
+
+  utter_binary_definition:
+    - text: "This is binary definition"
+
+  utter_binary_pseudocode:
+    - text: "This is binary pseudocode"
+
+  utter_binary_visual:
+    - text: "This is binary visual"
+
+  utter_binary_resources:
+    - text: "This is binary resources"
+
+  utter_bfs_definition:
+    - text: "This is bfs definition"
+
+  utter_bfs_pseudocode:
+    - text: "This is bfs pseudocode"
+
+  utter_bfs_visual:
+    - text: "This is bfs visual"
+
+  utter_bfs_resources:
+    - text: "This is bfs resources"
+
+  utter_dfs_definition:
+    - text: "This is dfs definition"
+
+  utter_dfs_pseudocode:
+    - text: "This is dfs pseudocode"
+
+  utter_dfs_visual:
+    - text: "This is dfs visual"
+
+  utter_dfs_resources:
+    - text: "This is dfs resources"
+
+  utter_quicksort_definition:
+    - text: "This is quicksort definition"
+
+  utter_quicksort_pseudocode:
+    - text: "This is quicksort pseudocode"
+
+  utter_quicksort_visual:
+    - text: "This is quicksort visual"
+
+  utter_quicksort_resources:
+    - text: "This is quicksort resources"
+
+  utter_heap_definition:
+    - text: "This is heap definition"
+
+  utter_heap_pseudocode:
+    - text: "This is heap pseudocode"
+
+  utter_heap_visual:
+    - text: "This is heap visual"
+
+  utter_heap_resources:
+    - text: "This is heap resources"
+
+  utter_merge_definition:
+    - text: "This is merge definition"
+
+  utter_merge_pseudocode:
+    - text: "This is merge pseudocode"
+
+  utter_merge_visual:
+    - text: "This is merge visual"
+
+  utter_merge_resources:
+    - text: "This is merge resources"
+
+  utter_bubble_definition:
+    - text: "This is bubble definition"
+
+  utter_bubble_pseudocode:
+    - text: "This is bubble pseudocode"
+
+  utter_bubble_visual:
+    - text: "This is bubble visual"
+
+  utter_bubble_resources:
+    - text: "This is bubble resources"
+
+  utter_insertion_definition:
+    - text: "This is insertion definition"
+
+  utter_insertion_pseudocode:
+    - text: "This is insertion pseudocode"
+
+  utter_insertion_visual:
+    - text: "This is insertion visual"
+
+  utter_insertion_resources:
+    - text: "This is insertion resources"
+
+  utter_no_more:
+    - text: "That is all the information I currently have for {algorithm} {category}. Thanks for learning!"
+    - text: "That is the current extend of my knowledge on {algorithm} {category}. I hope that helped!"
+    - text: "That's all I've got! Check back soon for more information related to {algorithm} {category}."
 
   utter_goodbye:
     - text: "Goodbye! If you have any more questions, feel free to ask."
+    - text: "See ya! I am always here if you have more questions"
+    - text: "Nice talking to you! If you want to learn more, you know where to find me."
 
   utter_i_am_a_bot:
     - text: "I am a bot. I am doing the best I can..."
+    - text: "I am a bot. You need to relax..."
+    - text: "Look, I am a simple bot. You know this already..."
 
   utter_out_of_scope:
     - text: "That is out of the scope of this lesson. Please get back on track you slacker."
-
-actions:
-  - utter_category_definition
-  - utter_search_algorithms
-  - utter_sort_algorithms
-  - utter_algorithm_definition
-  - utter_ask_visual
-  - utter_visual
-  - utter_ask_pseudocode
-  - utter_show_pseudocode
-  - utter_ask_additional_resources
-  - utter_additional_resources
-  - utter_goodbye
-  - utter_i_am_a_bot
-  - utter_out_of_scope
-  # - utter_greet
+    - text: "Looks like you are a little off topic. How about you lock back in?"
+    - text: "You know it's not my job to talk about things besides algorithms. You really want to keep trying?"
 
 slots:
   category:
@@ -86,9 +204,6 @@ slots:
     mappings:
       - type: from_entity
         entity: algorithm
-
-imports:
-  - algorithm_info.py
 
 session_config:
   session_expiration_time: 60
