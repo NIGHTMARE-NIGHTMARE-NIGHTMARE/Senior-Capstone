@@ -2,22 +2,31 @@
 <!DOCTYPE html>
 <html lang="en" >
     <head>
-        <!-- Load before anything else to reduce layout shift -->
-
-
         <title>{% block title %}{% endblock %}iBIS</title>
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">    
     </head>
     <body>
+
+        <header>
+            <section class="sticky-content">
+                <h1>THIS IS IBIS</h1>
+                <nav>
+                    <ul>
+                        <li><a href="">Chat</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Settings</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </header>
         
         <main class="main">
             {% block content %}{% endblock %}
         </main>
+
 
     </body>
 </html>

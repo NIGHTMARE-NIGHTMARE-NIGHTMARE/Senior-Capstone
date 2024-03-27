@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home - {% endblock %}
+{% block content %}
+
+<head>
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+
+<body>
+    <div class="msg-inputs">
+        <textarea class="msg-input" placeholder="Message" name="message" id="message" onkeydown="handleKeyDown(event)" required></textarea>
+        <button class="send-btn" type="button" name="send" id="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+</body>
+
+{% endblock %}

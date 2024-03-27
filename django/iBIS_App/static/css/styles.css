@@ -1,0 +1,101 @@
+  body{
+    overflow-wrap: break-word;
+  }
+
+  .main{
+    margin-left: 10vw;
+    margin-right: 10vw;
+    max-width: 1200px;
+  }
+  
+  h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 36px;
+  }
+
+  .sticky-content {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 1;
+    position: fixed;
+    width: 100vw;
+    border-bottom: 2px solid #1a1a1a;
+    top: 0;
+  }
+
+  .sticky-content h1{
+    margin: 0;
+  }
+
+  nav{
+    display: flex;
+    align-content: end;
+    justify-content: right;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline;
+    float: right;
+  }
+  
+  nav a {
+    display: block;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300; 
+    font-size: 24px;
+    text-decoration: none;
+  }
+
+  .msg-inputs{
+    overflow-wrap: break-word;
+    align-content: center;
+    position: fixed;
+    bottom: 3vh;
+    display: flex;
+    width: 100%;
+    resize: vertical;
+ }
+
+         
+ .msg-inputs textarea {
+   font-size: 36px;
+   width:70vw;
+   overflow-wrap: break-word;
+   background-color: #181818;
+   color: #ff9e3d;
+   border: 2px solid black; /* or make 'none' */
+   resize: none;
+   padding: 10px;
+ }
+ 
+ .msg-inputs .send-btn{
+     font-size: 36px;
+     background-color: #181818; 
+     color: #ff9e3d;
+     border: 2px solid #ff9e3d;
+     margin-left: 2px;
+     width: 10vw;
+     overflow: hidden;
+     justify-content: center;
+ }
+   
+ .send-btn:hover {
+   background-color: #ff9e3d;
+   color: white;
+   cursor: pointer;
+ }
