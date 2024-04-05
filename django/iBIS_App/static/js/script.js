@@ -7,12 +7,10 @@ function sendMessage() {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            // Remove X-CSRFToken if not needed
-            // 'X-CSRFToken': '{{ csrf_token }}',
         },
         body: JSON.stringify({
             "message": message.value,
-            "sender": "Carson"
+            "sender": "User"
         }),
     })
     .then(response => {
@@ -45,7 +43,7 @@ function sendMessage() {
                 ibisMessage.className = `ibis message`;
                 area.appendChild(ibisMessage);
 
-                console.log("Rasa Message:", item.text); // or item.message for Rasa 3.x
+                console.log("Rasa Message:", item.text);
             });
         } else {
             console.log("No response from Rasa.");
