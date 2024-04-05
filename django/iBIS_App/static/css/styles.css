@@ -1,11 +1,13 @@
   body{
     overflow-wrap: break-word;
+    background-color: #404040;
   }
 
   .main{
     margin-left: 10vw;
     margin-right: 10vw;
     max-width: 1200px;
+    margin-top: 80px;
   }
   
   h1 {
@@ -67,20 +69,24 @@
     position: fixed;
     bottom: 3vh;
     display: flex;
-    width: 100%;
-    resize: vertical;
+    width: calc(100% - 20vw);
+    resize: none;
+    border-radius: 30px;
+    overflow: hidden;
  }
 
          
  .msg-inputs textarea {
-   font-size: 36px;
-   width:70vw;
+   font-size: 20px;
+   width: 85%;
    overflow-wrap: break-word;
    background-color: #181818;
    color: #ff9e3d;
    border: 2px solid black; /* or make 'none' */
    resize: none;
-   padding: 10px;
+   padding: 15px 20px;
+   margin: 0;
+   align-items: center;
  }
  
  .msg-inputs .send-btn{
@@ -89,13 +95,47 @@
      color: #ff9e3d;
      border: 2px solid #ff9e3d;
      margin-left: 2px;
-     width: 10vw;
+     width: 15%;
      overflow: hidden;
      justify-content: center;
+     border-radius: 0 30px 30px 0;
  }
    
  .send-btn:hover {
    background-color: #ff9e3d;
    color: white;
    cursor: pointer;
+ }
+
+ .message-area{
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  padding: 20px 0;
+ }
+
+ .message-area .message{
+  display: inline-block;
+  background-color: white;
+  padding: 15px;
+  border-radius: 20px;
+  max-width: 70%;
+  margin-bottom: 0;
+  margin-top: 5px;
+ }
+
+ .message-area .user{
+  margin: 15px 0px;
+  margin-left: auto;
+ }
+
+ .message-area .ibis{
+  margin-right: auto;
+ }
+
+ .ibis-top{
+  font-size: 15px;
+  color: rgba(255,255,255, 1);
+  margin: 0;
+  margin-left: 15px;
  }

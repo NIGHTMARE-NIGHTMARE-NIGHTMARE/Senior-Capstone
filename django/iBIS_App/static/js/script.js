@@ -1,8 +1,59 @@
-console.log("logged");
-
-function sendMessage(){
+function sendMessage() {
     const message = document.querySelector("textarea.msg-input");
-    console.log(message.value);
-    message.value = "";
-    // call django api through ajax
+    const area = document.querySelector(".message-area");
+    
+
+    fetch(`http://10.172.81.173:5005/webhooks/rest/webhook`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            // Remove X-CSRFToken if not needed
+            // 'X-CSRFToken': '{{ csrf_token }}',
+        },
+        body: JSON.stringify({
+            "message": message.value,
+            "sender": "Carson"
+        }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        console.log("Response:", response);
+        return response.json();  // Parse response as JSON
+    })
+    .then(data => {
+        console.log("Message to send:", message.value);
+        const userMessage = document.createElement('p');
+        userMessage.textContent = message.value;
+        userMessage.className = `user message`;
+        area.appendChild(userMessage);
+
+
+        console.log("Response JSON:", data);
+        // Handle your response data here
+        if (data && data.length > 0) {
+            // Assuming Rasa returns an array of messages
+            data.forEach(item => {
+                const ibisName = document.createElement('p');
+                ibisName.textContent = "Oliver";
+                ibisName.className = `ibis-top`;
+                area.appendChild(ibisName);
+
+                const ibisMessage = document.createElement('p');
+                ibisMessage.textContent = item.text;
+                ibisMessage.className = `ibis message`;
+                area.appendChild(ibisMessage);
+
+                console.log("Rasa Message:", item.text); // or item.message for Rasa 3.x
+            });
+        } else {
+            console.log("No response from Rasa.");
+        }
+        // Clear input after sending
+        message.value = "";
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
 }
