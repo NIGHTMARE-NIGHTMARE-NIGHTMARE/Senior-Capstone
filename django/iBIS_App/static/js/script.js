@@ -31,17 +31,19 @@ function sendMessage() {
         console.log("Response JSON:", data);
         // Handle your response data here
         if (data && data.length > 0) {
+            const messageDiv = document.createElement('div');
+            const ibisName = document.createElement('p');
+            ibisName.textContent = "Oliver";
+            ibisName.className = `ibis-top`;
+            messageDiv.appendChild(ibisName);
             // Assuming Rasa returns an array of messages
             data.forEach(item => {
-                const ibisName = document.createElement('p');
-                ibisName.textContent = "Oliver";
-                ibisName.className = `ibis-top`;
-                area.appendChild(ibisName);
-
                 const ibisMessage = document.createElement('p');
                 ibisMessage.textContent = item.text;
                 ibisMessage.className = `ibis message`;
-                area.appendChild(ibisMessage);
+                messageDiv.appendChild(ibisMessage);
+                
+                area.appendChild(messageDiv);
 
                 console.log("Rasa Message:", item.text);
             });
