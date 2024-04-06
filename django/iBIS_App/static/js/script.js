@@ -3,7 +3,7 @@ function sendMessage() {
     const area = document.querySelector(".message-area");
     
 
-    fetch(`http://10.172.81.173:5005/webhooks/rest/webhook`, {
+    fetch(`http://100.70.102.193:5005/webhooks/rest/webhook`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
