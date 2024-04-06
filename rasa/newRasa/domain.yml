@@ -23,12 +23,18 @@ responses:
 
   utter_category:
     - text: "The definition of {category} algorithm is: "
+    - text: "A {category} algorithm is defined as: "
+    - text: "We can describe {category} algorithm as: "
 
   utter_search_definition:
-    - text: "This is search definition"
+    - text: "A systematic procedure or method used to locate specific data within a collection or dataset. It involves examining each element of the dataset in a structured manner until the desired data is found or determined to be absent."
+    - text: "A computational technique designed to efficiently retrieve information from a data structure. It typically involves evaluating the contents of the data structure and applying predefined rules or conditions to identify the target data."
+    - text: "A procedure that navigates through a collection of elements, such as an array or a tree, to locate a particular value or determine its nonexistence. The algorithm's efficiency is measured based on factors such as time complexity and space complexity."
 
   utter_sort_definition:
-    - text: "This is sort definition"
+    - text: "A procedure used to arrange elements in a specific order within a collection or dataset. It systematically compares and reorganizes elements based on predetermined criteria to achieve ascending or descending order."
+    - text: "A computational technique designed to rearrange elements within a data structure in a specified order. It involves comparing elements and swapping their positions based on defined comparison rules to achieve sorted output."
+    - text: "A set of instructions or rules that dictate how to organize elements within a dataset into a desired order, such as ascending or descending. It is commonly used in data processing and analysis to facilitate efficient searching, indexing, and retrieval operations."
 
   utter_search_algorithms:
     - text: "Here are some search algorithms: \n\t- Linear Search\n\t- Binary Search\n\t- Bredth First Search (BFS)\n\t- Depth First Search (DFS) \nPlease select one to start!"
@@ -43,6 +49,8 @@ responses:
     - text: "Want more info?"
     - text: "Should I keep going?"
     - text: "Wanna keep learning about {algorithm} {category}?"
+    - text: "Do you want more info on {algorithm} {category}?"
+    - text: "Should I keep yapping about this?"
 
   utter_algorithm_definition:
     - text: "The definition of {algorithm} {category} is: "
@@ -80,39 +88,6 @@ responses:
   utter_binary_definition:
     - text: "This is binary definition"
 
-  utter_binary_pseudocode:
-    - text: "This is binary pseudocode"
-
-  utter_binary_visual:
-    - text: "This is binary visual"
-
-  utter_binary_resources:
-    - text: "This is binary resources"
-
-  utter_bfs_definition:
-    - text: "This is bfs definition"
-
-  utter_bfs_pseudocode:
-    - text: "This is bfs pseudocode"
-
-  utter_bfs_visual:
-    - text: "This is bfs visual"
-
-  utter_bfs_resources:
-    - text: "This is bfs resources"
-
-  utter_dfs_definition:
-    - text: "This is dfs definition"
-
-  utter_dfs_pseudocode:
-    - text: "This is dfs pseudocode"
-
-  utter_dfs_visual:
-    - text: "This is dfs visual"
-
-  utter_dfs_resources:
-    - text: "This is dfs resources"
-
   utter_quicksort_definition:
     - text: "This is quicksort definition"
 
@@ -125,53 +100,8 @@ responses:
   utter_quicksort_resources:
     - text: "This is quicksort resources"
 
-  utter_heap_definition:
-    - text: "This is heap definition"
-
-  utter_heap_pseudocode:
-    - text: "This is heap pseudocode"
-
-  utter_heap_visual:
-    - text: "This is heap visual"
-
-  utter_heap_resources:
-    - text: "This is heap resources"
-
-  utter_merge_definition:
-    - text: "This is merge definition"
-
-  utter_merge_pseudocode:
-    - text: "This is merge pseudocode"
-
-  utter_merge_visual:
-    - text: "This is merge visual"
-
-  utter_merge_resources:
-    - text: "This is merge resources"
-
   utter_bubble_definition:
     - text: "This is bubble definition"
-
-  utter_bubble_pseudocode:
-    - text: "This is bubble pseudocode"
-
-  utter_bubble_visual:
-    - text: "This is bubble visual"
-
-  utter_bubble_resources:
-    - text: "This is bubble resources"
-
-  utter_insertion_definition:
-    - text: "This is insertion definition"
-
-  utter_insertion_pseudocode:
-    - text: "This is insertion pseudocode"
-
-  utter_insertion_visual:
-    - text: "This is insertion visual"
-
-  utter_insertion_resources:
-    - text: "This is insertion resources"
 
   utter_no_more:
     - text: "That is all the information I currently have for {algorithm} {category}. Thanks for learning!"
@@ -191,7 +121,7 @@ responses:
   utter_out_of_scope:
     - text: "That is out of the scope of this lesson. Please get back on track you slacker."
     - text: "Looks like you are a little off topic. How about you lock back in?"
-    - text: "You know it's not my job to talk about things besides algorithms. You really want to keep trying?"
+    - text: "You know it's not my job to talk about things besides algorithms. You really want to keep trying? Get back to what I said."
 
 slots:
   category:
