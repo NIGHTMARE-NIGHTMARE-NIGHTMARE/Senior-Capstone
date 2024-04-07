@@ -70,7 +70,7 @@
     padding: 20px;
     font-family: "Poppins", sans-serif;
     color: #DB8451;
-    font-weight: 300; 
+    font-weight: 400; 
     font-size: 24px;
     text-decoration: none;
   }
@@ -90,7 +90,7 @@
     width: 85%;
     height: min(7vh, 100px);
     margin: 0 auto;
-    bottom: -10px;
+    padding-bottom: 2vh;
  }
 
          
@@ -133,9 +133,9 @@
  .message-area{
   display: flex;
   flex-direction: column;
-  height: 75vh;
+  height: 72vh;
   padding: 20px 20px;
-  padding-bottom: 40px;
+  padding-bottom: 5vh;
   overflow: scroll;
   overflow-x: hidden;
   scrollbar-color: #DB8451 #252525;
