@@ -24,12 +24,15 @@ def api_call(request):
     message = request.POST.get('message')
     print(message)
 
-    data = [
-        {
-            "text": "This is a test message from rasa!",
-        },
-        {
-            "text": "This is rasa's second message so we can handle 2 messages at once."
-        }
-    ]
+    data = {
+        "response":[
+            {
+                "text": "This is a test message from rasa!",
+            },
+            {
+                "text": "This is rasa's second message so we can handle 2 messages at once."
+            }
+        ],
+        "message":message
+    }
     return JsonResponse(data)
