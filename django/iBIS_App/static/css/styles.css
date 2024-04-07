@@ -40,6 +40,7 @@
     width: 100vw;
     top: 0;
     align-items: center;
+    box-shadow: 0 0 0.75rem #DB8451, 0 10px 20px #252525;
   }
 
   .sticky-content img{
@@ -80,6 +81,12 @@
   nav a:hover {
     color: #F2E7DC;
     background-color: #DB8451;
+  }
+
+  .bottom-shadow{
+    box-shadow: 0 -5px 20px #252525;
+    z-index: 1;
+    height: 2vh;
   }
 
   .msg-inputs{
@@ -134,7 +141,7 @@
  .message-area{
   display: flex;
   flex-direction: column;
-  height: 72vh;
+  height: 70vh;
   padding: 20px 20px;
   padding-bottom: 5vh;
   overflow: scroll;
@@ -155,6 +162,7 @@
   max-width: 70%;
   margin-bottom: 0;
   margin-top: 5px;
+  z-index: -1;
  }
 
  .message-area .user{
