@@ -3,22 +3,27 @@
   <defs>
     <style>
       .cls-1, .cls-2, .cls-3 {
+        font-family: Poppins-Regular, Poppins;
         stroke-width: 0px;
       }
 
       .cls-1, .cls-4, .cls-5 {
+        font-family: Poppins-Regular, Poppins;
         fill: #fff3e7;
       }
 
       .cls-6 {
+        font-family: Poppins-Regular, Poppins;
         font-size: 169.16px;
       }
 
       .cls-2 {
+        font-family: Poppins-Regular, Poppins;
         fill: #db6c51;
       }
 
       .cls-3 {
+        font-family: Poppins-Regular, Poppins;
         fill: #db8451;
       }
 
@@ -27,10 +32,12 @@
       }
 
       .cls-5 {
+        font-family: Poppins-Regular, Poppins;
         letter-spacing: 0em;
       }
 
       .cls-8 {
+        font-family: Poppins-Regular, Poppins;
         font-size: 1051.62px;
       }
 
@@ -41,6 +48,7 @@
       }
 
       .cls-10 {
+        font-family: Poppins-Regular, Poppins;
         letter-spacing: 0em;
       }
     </style>
