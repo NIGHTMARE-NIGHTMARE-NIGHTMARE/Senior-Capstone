@@ -2,9 +2,12 @@
     font-family: "Poppins", sans-serif;
   }
 
+  
   :root{
     overflow: hidden;
+    height: 100%
   }
+  
   
   body{
     overflow-wrap: break-word;
@@ -130,6 +133,9 @@
   padding: 20px 0;
   padding-bottom: 40px;
   overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-color: #ff9e3d #404040;
+  scrollbar-width: thin;
  }
 
  .message-area div{
