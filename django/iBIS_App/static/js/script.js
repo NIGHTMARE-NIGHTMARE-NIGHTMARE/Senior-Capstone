@@ -50,7 +50,7 @@ function sendMessage() {
 
     var waitTime = 80;
 
-    debug = true
+    debug = false
     
     // if there is a message to send
     if(message.value){
@@ -137,11 +137,13 @@ function sendMessage() {
             }
         }
         else{
+
             // call api
-            fetch(`http://10.10.19.11:5005/webhooks/rest/webhook`, {
+            fetch(`http://127.0.0.1:8000/api/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'X-CSRFToken':csrfToken,
                 },
                 body: JSON.stringify({
                     "message": message.value,

@@ -5,6 +5,10 @@
 
 <head>
     <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        // Pass CSRF token to JavaScript
+        const csrfToken = "{{ csrf_token }}";
+    </script>
 </head>
 
 <body>
