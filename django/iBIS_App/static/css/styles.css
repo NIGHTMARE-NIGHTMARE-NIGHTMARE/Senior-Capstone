@@ -1,17 +1,17 @@
   *{
     font-family: "Poppins", sans-serif;
   }
-
   
   :root{
     overflow: hidden;
     height: 100%
   }
   
+
   
   body{
     overflow-wrap: break-word;
-    background-color: #404040;
+    background-color: #252525;
     margin: 0;
   }
 
@@ -29,25 +29,26 @@
   }
 
   .sticky-content {
-    background-color: white;
+    background-color: #404040;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     z-index: 1;
     position: fixed;
     width: 100vw;
-    padding: 7px;
     top: 0;
+    align-items: center;
   }
 
-  .sticky-content h1{
-    margin: 0;
+  .sticky-content img{
+    margin-left: 5vw;
   }
 
   nav{
     display: flex;
     align-content: end;
     justify-content: right;
+    margin-right: 5vw;
   }
 
   nav ul {
@@ -66,12 +67,17 @@
   
   nav a {
     display: block;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 25px;
     font-family: "Poppins", sans-serif;
+    color: #DB8451;
     font-weight: 300; 
     font-size: 24px;
     text-decoration: none;
+  }
+
+  nav a:hover {
+    color: #F2E7DC;
+    background-color: #DB8451;
   }
 
   .msg-inputs{
@@ -85,7 +91,7 @@
     overflow: hidden;
     width: 85vw;
     bottom: 10px;
-    height: min(8vh, 100px);
+    height: min(7vh, 100px);
  }
 
          
@@ -94,13 +100,13 @@
    width: 95%;
    overflow-wrap: break-word;
    background-color: #181818;
-   color: #ff9e3d;
+   color: #DB8451;
    border: none; /* or make 'none' */
    resize: none;
    padding: 10px 10px;
    margin: 0;
    border-radius: 5px 0 0 5px;
-   scrollbar-color: #ff9e3d #181818;
+   scrollbar-color: #DB8451 #181818;
    scrollbar-width: thin;
  }
 
@@ -111,9 +117,8 @@
  .msg-inputs .send-btn{
      font-size: 30px;
      background-color: #181818; 
-     color: #ff9e3d;
-     border: 2px solid #ff9e3d;
-     margin-left: 2px;
+     color: #DB8451;
+     border: 2px solid #DB8451;
      width: 5vw;
      overflow: hidden;
      justify-content: center;
@@ -121,8 +126,8 @@
  }
    
  .send-btn:hover {
-   background-color: #ff9e3d;
-   color: white;
+   background-color: #DB8451;
+   color: #F2E7DC;
    cursor: pointer;
  }
 
@@ -130,11 +135,11 @@
   display: flex;
   flex-direction: column;
   height: 75vh;
-  padding: 20px 0;
+  padding: 20px 20px;
   padding-bottom: 40px;
   overflow: scroll;
   overflow-x: hidden;
-  scrollbar-color: #ff9e3d #404040;
+  scrollbar-color: #DB8451 #252525;
   scrollbar-width: thin;
  }
 
@@ -145,7 +150,6 @@
 
  .message-area .message{
   display: inline-block;
-  background-color: white;
   padding: 15px;
   border-radius: 5px;
   max-width: 70%;
@@ -154,11 +158,13 @@
  }
 
  .message-area .user{
+  background-color: #DB8451;
   margin: 15px 0px;
   margin-left: auto;
  }
 
  .message-area .ibis{
+  background-color: #F2E7DC;
   margin-right: auto;
  }
 
@@ -166,8 +172,6 @@
   font-size: 15px;
   color: rgba(255,255,255, 1);
   margin: 0;
-  margin-left: 15px;
-
  }
 
  .error-message{
