@@ -3,36 +3,76 @@ version: "3.1"
 stories:
   - story: linear
     steps:
-      - intent: greet
-      - action: utter_choose_category
       - intent: choose_category
         entities:
           - category: "search"
-      - action: utter_category
-      - action: utter_search_definition
-      - action: utter_search_algorithms
+      - action: utter_search
       - intent: select_algorithm
         entities:
           - algorithm: "linear"
-      - action: utter_algorithm_definition
-      - action: utter_linear_definition
-      - action: utter_more_info
+      - action: utter_linear_def
       - intent: affirm
-      - action: utter_algorithm_pseudocode
-      - action: utter_linear_pseudocode
-      - action: utter_more_info
+      - action: utter_linear_code
       - intent: affirm
-      - action: utter_algorithm_visual
       - action: utter_linear_visual
-      - action: utter_more_info
       - intent: affirm
-      - action: utter_algorithm_resources
       - action: utter_linear_resources
-      - action: utter_no_more
-      - action: utter_goodbye
       - slot_was_set:
           - category: "search"
           - algorithm: "linear"
+
+  - story: quicksort
+    steps:
+      - intent: choose_category
+        entities:
+          - category: "sort"
+      - action: utter_sort
+      - intent: select_algorithm
+        entities:
+          - algorithm: "quicksort"
+      - action: utter_quicksort_def
+      - intent: affirm
+      - action: utter_quicksort_code
+      - intent: affirm
+      - action: utter_quicksort_visual
+      - intent: affirm
+      - action: utter_quicksort_resources
+      - slot_was_set:
+          - category: "sort"
+          - algorithm: "quicksort"
+
+  # - story: linear
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_choose_category
+  #     - intent: choose_category
+  #       entities:
+  #         - category: "search"
+  #     - action: utter_category
+  #     - action: utter_search_definition
+  #     - action: utter_search_algorithms
+  #     - intent: select_algorithm
+  #       entities:
+  #         - algorithm: "linear"
+  #     - action: utter_algorithm_definition
+  #     - action: utter_linear_definition
+  #     - action: utter_more_info
+  #     - intent: affirm
+  #     - action: utter_algorithm_pseudocode
+  #     - action: utter_linear_pseudocode
+  #     - action: utter_more_info
+  #     - intent: affirm
+  #     - action: utter_algorithm_visual
+  #     - action: utter_linear_visual
+  #     - action: utter_more_info
+  #     - intent: affirm
+  #     - action: utter_algorithm_resources
+  #     - action: utter_linear_resources
+  #     - action: utter_no_more
+  #     - action: utter_goodbye
+  #     - slot_was_set:
+  #         - category: "search"
+  #         - algorithm: "linear"
 
   # - story: quicksort
   #   steps:
