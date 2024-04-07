@@ -21,18 +21,43 @@ def get_csrf_token(request):
     return request.COOKIES.get('csrftoken', '')
 
 def api_call(request):
-    message = request.POST.get('message')
-    print(message)
+    debug = True
+    if not debug:
+        body = json.loads(request.body)
+        message = body.get('message')
+        print("Received message:", message)
 
-    data = {
-        "response":[
+        # Define the URL
+        url = 'http://127.0.0.1:8000/api/'
+
+        # Create the headers with Content-Type and X-CSRFToken
+        headers = {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': get_csrf_token(request),
+        }
+
+        # Create the data payload
+        data = {
+            "message": message,
+            "sender": "User"
+        }
+
+        # Convert the payload to JSON
+        json_data = json.dumps(data)
+
+        # Make the POST request
+        response = requests.post(url, headers=headers, data=json_data)
+        
+        if response:
+            return JsonResponse(response, safe=False)
+        # else:
+        #     return JsonResponse([], safe=False)
+    else:
+        return JsonResponse([
             {
-                "text": "This is a test message from rasa!",
+                "text":"Please stop texting me!<br>         This is a test",
             },
             {
-                "text": "This is rasa's second message so we can handle 2 messages at once."
-            }
-        ],
-        "message":message
-    }
-    return JsonResponse(data)
+                "text": "I don't know who you are."
+            },
+        ], safe=False)

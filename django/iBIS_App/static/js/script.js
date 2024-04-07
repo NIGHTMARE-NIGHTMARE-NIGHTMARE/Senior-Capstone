@@ -199,7 +199,7 @@ function sendMessage() {
                         const messagePromise = new Promise((resolve) => {
                             words.forEach((word, wordIndex) => {
                             setTimeout(() => {
-                                ibisMessage.textContent += (wordIndex > 0 ? ' ' : '') + word;
+                                ibisMessage.innerHTML += (wordIndex > 0 ? ' ' : '') + word;
                                 if (wordIndex === words.length - 1) {
                                 resolve(); // Resolve the promise when message is complete
                                 }
@@ -212,7 +212,7 @@ function sendMessage() {
                         messagePromise.then(() => {
                             setTimeout(() => {
                                 displayMessage(index + 1);
-                            }, 1000);
+                            }, 500);
                         });
 
                         console.log("Rasa Message:", item.text);
