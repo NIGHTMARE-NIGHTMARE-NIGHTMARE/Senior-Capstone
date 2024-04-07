@@ -67,7 +67,7 @@
   
   nav a {
     display: block;
-    padding: 25px;
+    padding: 20px;
     font-family: "Poppins", sans-serif;
     color: #DB8451;
     font-weight: 300; 
@@ -90,11 +90,12 @@
     width: 85%;
     height: min(7vh, 100px);
     margin: 0 auto;
+    bottom: -10px;
  }
 
          
  .msg-inputs textarea {
-   font-size: 20px;
+   font-size: 18px;
    width: 95%;
    overflow-wrap: break-word;
    background-color: #181818;
