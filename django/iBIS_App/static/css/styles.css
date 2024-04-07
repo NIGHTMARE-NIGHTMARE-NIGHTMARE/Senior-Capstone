@@ -84,14 +84,12 @@
     overflow-wrap: break-word;
     align-content: center;
     display: flex;
-    z-index: 1;
-    position: fixed;
     resize: none;
     border-radius: 5px;
     overflow: hidden;
-    width: 85vw;
-    bottom: 10px;
+    width: 85%;
     height: min(7vh, 100px);
+    margin: 0 auto;
  }
 
          
