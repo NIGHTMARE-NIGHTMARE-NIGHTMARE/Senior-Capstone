@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             }
                         }, index2 * waitTime);
                     });
-                }, 700);
+                }, 500);
             }
         }, index * waitTime);
     });
@@ -51,7 +51,6 @@ function sendMessage() {
     var waitTime = 80;
 
     debug = true
-
     
     // if there is a message to send
     if(message.value){
@@ -64,28 +63,34 @@ function sendMessage() {
             userMessage.className = `user message`;
             area.appendChild(userMessage); // add to the chat area
 
-            data = [
+            message.value = "";
+
+            const data = [
                 {
                     "text": "This is a test message from rasa!",
                 },
                 {
                     "text": "This is rasa's second message so we can handle 2 messages at once."
                 }
-            ]
+            ];
 
             console.log("Response JSON:", data);
+
             // handle response data
             if (data && data.length > 0) {
                 const messageDiv = document.createElement('div'); // create message div
-                
+
                 // create oliver's name
                 const ibisName = document.createElement('p');
                 ibisName.textContent = "Oliver";
                 ibisName.className = `ibis-top`;
                 messageDiv.appendChild(ibisName);
+                area.scrollTop = area.scrollHeight;
 
-                // loop through each item
-                data.forEach(item => {
+                // Function to display each message
+                function displayMessage(index) {
+                    if (index < data.length) {
+                    const item = data[index];
                     const words = item.text.split(' ');
 
                     const ibisMessage = document.createElement('p');
@@ -93,28 +98,43 @@ function sendMessage() {
                     ibisMessage.className = `ibis message`;
                     messageDiv.appendChild(ibisMessage);
 
-                    // loop through each word to be added individually
-                    words.forEach((word, index) => {
+                    // Promise to wait for the message to complete
+                    const messagePromise = new Promise((resolve) => {
+                        words.forEach((word, wordIndex) => {
                         setTimeout(() => {
-                            ibisMessage.textContent += (index > 0 ? ' ' : '') + word;
-                            if (index === word.length - 1) {
-                                setTimeout(() => {
-                                    message.focus();
-                                }, 400);
+                            ibisMessage.textContent += (wordIndex > 0 ? ' ' : '') + word;
+                            if (wordIndex === words.length - 1) {
+                            resolve(); // Resolve the promise when message is complete
                             }
-                        }, index * waitTime);
+                            area.scrollTop = area.scrollHeight;
+                        }, wordIndex * waitTime);
+                        });
                     });
-                    
-                    area.appendChild(messageDiv);
+
+                    // After the promise is resolved, call the next message
+                    messagePromise.then(() => {
+                        setTimeout(() => {
+                            displayMessage(index + 1);
+                        }, 500);
+                    });
 
                     console.log("Rasa Message:", item.text);
-                });
-            } else {
+                    } else {
+                    // Clear input after sending all messages
+                    message.focus(); // refocus input
+                    }
+                }
+
+                // Start displaying messages with the first one
+                displayMessage(0);
+
+                area.appendChild(messageDiv);
+            } 
+            else {
                 console.log("No response from Rasa.");
+                // Clear input after sending
+                message.focus(); // refocus input
             }
-            // Clear input after sending
-            message.value = "";
-            message.focus(); // refocus input
         }
         else{
             // call api
@@ -147,20 +167,25 @@ function sendMessage() {
                 userMessage.textContent = message.value;
                 userMessage.className = `user message`;
                 area.appendChild(userMessage); // add to the chat area
+                area.scrollTop = area.scrollHeight;
+
+                message.value = "";
 
                 console.log("Response JSON:", data);
                 // handle response data
                 if (data && data.length > 0) {
                     const messageDiv = document.createElement('div'); // create message div
-                    
+
                     // create oliver's name
                     const ibisName = document.createElement('p');
                     ibisName.textContent = "Oliver";
                     ibisName.className = `ibis-top`;
                     messageDiv.appendChild(ibisName);
 
-                    // loop through each item
-                    data.forEach(item => {
+                    // Function to display each message
+                    function displayMessage(index) {
+                        if (index < data.length) {
+                        const item = data[index];
                         const words = item.text.split(' ');
 
                         const ibisMessage = document.createElement('p');
@@ -168,28 +193,43 @@ function sendMessage() {
                         ibisMessage.className = `ibis message`;
                         messageDiv.appendChild(ibisMessage);
 
-                        // loop through each word to be added individually
-                        words.forEach((word, index) => {
+                        // Promise to wait for the message to complete
+                        const messagePromise = new Promise((resolve) => {
+                            words.forEach((word, wordIndex) => {
                             setTimeout(() => {
-                                ibisMessage.textContent += (index > 0 ? ' ' : '') + word;
-                                if (index === word.length - 1) {
-                                    setTimeout(() => {
-                                        message.focus();
-                                    }, 400);
+                                ibisMessage.textContent += (wordIndex > 0 ? ' ' : '') + word;
+                                if (wordIndex === words.length - 1) {
+                                resolve(); // Resolve the promise when message is complete
                                 }
-                            }, index * waitTime);
+                                area.scrollTop = area.scrollHeight;
+                            }, wordIndex * waitTime);
+                            });
                         });
-                        
-                        area.appendChild(messageDiv);
+
+                        // After the promise is resolved, call the next message
+                        messagePromise.then(() => {
+                            setTimeout(() => {
+                                displayMessage(index + 1);
+                            }, 1000);
+                        });
 
                         console.log("Rasa Message:", item.text);
-                    });
-                } else {
+                        } else {
+                        // Clear input after sending all messages
+                        message.focus(); // refocus input
+                        }
+                    }
+
+                    // Start displaying messages with the first one
+                    displayMessage(0);
+
+                    area.appendChild(messageDiv);
+                } 
+                else {
                     console.log("No response from Rasa.");
+                    // Clear input after sending
+                    message.focus(); // refocus input
                 }
-                // Clear input after sending
-                message.value = "";
-                message.focus(); // refocus input
             })
             .catch(error => {
                 const main = document.querySelector("main");
