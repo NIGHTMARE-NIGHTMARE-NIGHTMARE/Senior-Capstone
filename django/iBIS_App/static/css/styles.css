@@ -4,12 +4,23 @@
   
   :root{
     overflow: hidden;
-    height: 100%
+    height: 100%;
+    /* this has to be set to switch between light or dark */
+    color-scheme: light dark;
+  }
+
+  .light {
+    /* forces light color-scheme */
+    color-scheme: light;
+  }
+  .dark {
+    /* forces dark color-scheme */
+    color-scheme: dark;
   }
   
   body{
     overflow-wrap: break-word;
-    background-color: #252525;
+    background-color: light-dark(#F2E7DC, #252525);
     margin: 0;
   }
 
@@ -31,7 +42,7 @@
   }
 
   .sticky-content {
-    background-color: #1c1c1c;
+    background-color: light-dark(#efd8c2, #1c1c1c);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -40,7 +51,7 @@
     width: 100vw;
     top: 0;
     align-items: center;
-    box-shadow: 0 0 0.75rem #DB8451, 0 10px 20px #252525;
+    box-shadow: 0 0 0.75rem #DB8451, 0 10px 20px light-dark(#F2E7DC, #252525);
   }
 
   .sticky-content img{
@@ -84,7 +95,7 @@
   }
 
   .bottom-shadow{
-    box-shadow: 0 -5px 20px #252525;
+    box-shadow: 0 -5px 20px light-dark(#F2E7DC, #252525);
     z-index: 1;
     height: 2vh;
   }
@@ -106,14 +117,14 @@
    font-size: 18px;
    width: 95%;
    overflow-wrap: break-word;
-   background-color: #1c1c1c;
+   background-color: light-dark(#efd8c2, #1c1c1c);
    color: #DB8451;
    border: none; /* or make 'none' */
    resize: none;
    padding: 10px 10px;
    margin: 0;
    border-radius: 5px 0 0 5px;
-   scrollbar-color: #DB8451 #1c1c1c;
+   scrollbar-color: #DB8451 light-dark(#efd8c2, #1c1c1c);
    scrollbar-width: thin;
  }
 
@@ -123,7 +134,7 @@
  
  .msg-inputs .send-btn{
      font-size: 30px;
-     background-color: #1c1c1c; 
+     background-color: light-dark(#efd8c2, #1c1c1c); 
      color: #DB8451;
      border: 2px solid #DB8451;
      width: 5vw;
@@ -146,7 +157,7 @@
   padding-bottom: 5vh;
   overflow: scroll;
   overflow-x: hidden;
-  scrollbar-color: #DB8451 #252525;
+  scrollbar-color: #DB8451 light-dark(#F2E7DC, #252525);
   scrollbar-width: thin;
  }
 
@@ -172,13 +183,13 @@
  }
 
  .message-area .ibis{
-  background-color: #F2E7DC;
+  background-color:light-dark(#939393, #F2E7DC);
   margin-right: auto;
  }
 
  .ibis-top{
   font-size: 15px;
-  color: rgba(255,255,255, 1);
+  color: #939393;
   margin: 0;
  }
 
@@ -223,9 +234,6 @@
   nav a {
     padding: 0px;
     font-size: 16px;
-    font-family: "Poppins", sans-serif;
-    color: #DB8451;
-    font-weight: 400; 
     text-decoration: none;
   }
 }
