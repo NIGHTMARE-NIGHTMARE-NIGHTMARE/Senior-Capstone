@@ -1,98 +1,173 @@
+// when the page loads
+document.addEventListener("DOMContentLoaded", function() {
+    const message = document.querySelector("textarea.msg-input");
+    message.value = "";
+
+    const messageArea = document.querySelector(".message-area>div");
+    
+    var text1 = "Hi I'm Ibis!";
+    var text2 = "Do you want to learn about search or sort algorithms? We have data for definitions, pseudocode, visuals, and additional resources.";
+
+    const words1 = text1.split(' ');
+    const words2 = text2.split(' ');
+
+    const message1 = document.createElement('p');
+    message1.textContent = "";
+    message1.className = `ibis message`;
+    messageArea.appendChild(message1);
+
+    var waitTime = 80;
+    words1.forEach((word, index) => {
+        setTimeout(() => {
+            message1.textContent += (index > 0 ? ' ' : '') + word;
+
+            if (index === words1.length - 1) {
+                setTimeout(() => {
+                    const message2 = document.createElement('p');
+                    message2.textContent = "";
+                    message2.className = `ibis message`;
+                    messageArea.appendChild(message2);
+
+                    words2.forEach((word2, index2) => {
+                        setTimeout(() => {
+                            message2.textContent += (index2 > 0 ? ' ' : '') + word2;
+                            if (index2 === words2.length - 1) {
+                                setTimeout(() => {
+                                    message.focus();
+                                }, 400);
+                            }
+                        }, index2 * waitTime);
+                    });
+                }, 700);
+            }
+        }, index * waitTime);
+    });
+});
+
 function sendMessage() {
     const message = document.querySelector("textarea.msg-input");
     const area = document.querySelector(".message-area");
     
+    // if there is a message to send
+    if(message.value){
+        message.blur(); // unfocus input
 
-    fetch(`http://10.10.19.11:5005/webhooks/rest/webhook`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            "message": message.value,
-            "sender": "User"
-        }),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        console.log("Response:", response);
-        return response.json();  // Parse response as JSON
-    })
-    .then(data => {
-        console.log("Message to send:", message.value);
-        const userMessage = document.createElement('p');
-        userMessage.textContent = message.value;
-        userMessage.className = `user message`;
-        area.appendChild(userMessage);
+        // call api
+        fetch(`http://10.10.19.11:5005/webhooks/rest/webhook`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                "message": message.value,
+                "sender": "User"
+            }),
+        })
 
-
-        console.log("Response JSON:", data);
-        // Handle your response data here
-        if (data && data.length > 0) {
-            const messageDiv = document.createElement('div');
-            const ibisName = document.createElement('p');
-            ibisName.textContent = "Oliver";
-            ibisName.className = `ibis-top`;
-            messageDiv.appendChild(ibisName);
-            // Assuming Rasa returns an array of messages
-            data.forEach(item => {
-                const ibisMessage = document.createElement('p');
-                ibisMessage.textContent = item.text;
-                ibisMessage.className = `ibis message`;
-                messageDiv.appendChild(ibisMessage);
-                
-                area.appendChild(messageDiv);
-
-                console.log("Rasa Message:", item.text);
-            });
-        } else {
-            console.log("No response from Rasa.");
-        }
-        // Clear input after sending
-        message.value = "";
-    })
-    .catch(error => {
-        const main = document.querySelector("main");
-
-    console.error("Error:", error);
-        const errorMessage = document.createElement('div');
-        const header = document.createElement('h2');
-        const errorText = document.createElement('p');
-        header.textContent = "An Error Occurred";
-        errorText.textContent = "Try again in 5 seconds";
-
-        errorMessage.appendChild(header);
-        errorMessage.appendChild(errorText);
-
-        errorMessage.className = `error-message`;
-        errorMessage.style.opacity = "0"; // Start with opacity 0
-        main.appendChild(errorMessage);
-
-        let i = 4;
-
-        const fadeIn = setInterval(() => {
-            let opacity = parseFloat(errorMessage.style.opacity);
-            errorMessage.style.opacity = (opacity + 0.1).toString();
-
-            if (opacity >= 1) {
-                clearInterval(fadeIn);
-
-                const countdown = setInterval(() => {
-                    errorText.textContent = `Try again in ${i} seconds`;
-                    i--;
-
-                    if (i < 1) {
-                        clearInterval(countdown);
-                        errorMessage.style.transition = "opacity 1s";
-                        errorMessage.style.opacity = "0";
-                        setTimeout(() => {
-                            main.removeChild(errorMessage);
-                        }, 1000); // Wait for the transition to complete before removing
-                    }
-                }, 1000);
+        // clean first response and convert to JSON
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
-        }, 0);
-    });
+            console.log("Response:", response);
+            return response.json();  // Parse response as JSON
+        })
+
+        // Render the response
+        .then(data => {
+            console.log("Message to send:", message.value);
+
+            // add user's message to stream
+            const userMessage = document.createElement('p');
+            userMessage.textContent = message.value;
+            userMessage.className = `user message`;
+            area.appendChild(userMessage); // add to the chat area
+
+            console.log("Response JSON:", data);
+            // handle response data
+            if (data && data.length > 0) {
+                const messageDiv = document.createElement('div'); // create message div
+                
+                // create oliver's name
+                const ibisName = document.createElement('p');
+                ibisName.textContent = "Oliver";
+                ibisName.className = `ibis-top`;
+                messageDiv.appendChild(ibisName);
+
+                // loop through each item
+                data.forEach(item => {
+                    const words = item.text.split(' ');
+
+                    const ibisMessage = document.createElement('p');
+                    ibisMessage.textContent = "";
+                    ibisMessage.className = `ibis message`;
+                    messageDiv.appendChild(ibisMessage);
+
+                    // loop through each word to be added individually
+                    words.forEach((word, index) => {
+                        setTimeout(() => {
+                            ibisMessage.textContent += (index > 0 ? ' ' : '') + word;
+                            if (index === word.length - 1) {
+                                setTimeout(() => {
+                                    message.focus();
+                                }, 400);
+                            }
+                        }, index * waitTime);
+                    });
+                    
+                    area.appendChild(messageDiv);
+
+                    console.log("Rasa Message:", item.text);
+                });
+            } else {
+                console.log("No response from Rasa.");
+            }
+            // Clear input after sending
+            message.value = "";
+            message.focus(); // refocus input
+        })
+        .catch(error => {
+            const main = document.querySelector("main");
+
+            console.error("Error:", error);
+            const errorMessage = document.createElement('div');
+            const header = document.createElement('h2');
+            const errorText = document.createElement('p');
+            header.textContent = "An Error Occurred";
+            errorText.textContent = "Try again in 5 seconds";
+
+            errorMessage.appendChild(header);
+            errorMessage.appendChild(errorText);
+
+            errorMessage.className = `error-message`;
+            errorMessage.style.opacity = "0"; // Start with opacity 0
+            main.appendChild(errorMessage);
+
+            let i = 4; // count to hit
+
+            const fadeIn = setInterval(() => {
+                let opacity = parseFloat(errorMessage.style.opacity);
+                errorMessage.style.opacity = (opacity + 0.1).toString();
+
+                if (opacity >= 1) {
+                    clearInterval(fadeIn);
+
+                    const countdown = setInterval(() => {
+                        errorText.textContent = `Try again in ${i} seconds`;
+                        i--;
+
+                        if (i < 1) {
+                            clearInterval(countdown);
+                            errorMessage.style.transition = "opacity 1s";
+                            errorMessage.style.opacity = "0";
+                            setTimeout(() => {
+                                main.removeChild(errorMessage);
+                                message.focus();
+                            }, 1000); // wait for the transition to complete before removing
+                        }
+                    }, 1000);
+                }
+            }, 0);
+        });
+    }
 }

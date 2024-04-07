@@ -11,18 +11,23 @@
     <div class="message-area">
         <div>
             <p class="ibis-top">Oliver</p>
-            <p class="ibis message">
-                Hi I'm Ibis!
-            </p>
-            <p class="ibis message">
-                Do you want to learn about search or sort algorithms? We have data for definitions, pseudocode, visuals, and additional resources.
-            </p>
         </div>
     </div>
     <div class="msg-inputs">
         <textarea class="msg-input" placeholder="Message" name="message" id="message" required></textarea>
         <button class="send-btn" type="button" name="send" id="send-btn" onclick="sendMessage()">></button>
     </div>
+    <script>
+        var messageInput = document.getElementById("message");
+
+        messageInput.addEventListener("keydown", function(event) {
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13 && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+    </script>
 </body>
 
 {% endblock %}
