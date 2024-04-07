@@ -7,8 +7,6 @@
     height: 100%
   }
   
-
-  
   body{
     overflow-wrap: break-word;
     background-color: #252525;
@@ -20,6 +18,10 @@
     margin: 10vh auto;
     padding: 0 20px;
   }
+
+  .logo{
+    height: 60px;
+  }
   
   h1 {
     font-family: "Poppins", sans-serif;
@@ -29,7 +31,7 @@
   }
 
   .sticky-content {
-    background-color: #404040;
+    background-color: #1c1c1c;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -88,9 +90,8 @@
     border-radius: 5px;
     overflow: hidden;
     width: 85%;
-    height: min(7vh, 100px);
+    height: min(8vh, 110px);
     margin: 0 auto;
-    padding-bottom: 2vh;
  }
 
          
@@ -98,14 +99,14 @@
    font-size: 18px;
    width: 95%;
    overflow-wrap: break-word;
-   background-color: #181818;
+   background-color: #1c1c1c;
    color: #DB8451;
    border: none; /* or make 'none' */
    resize: none;
    padding: 10px 10px;
    margin: 0;
    border-radius: 5px 0 0 5px;
-   scrollbar-color: #DB8451 #181818;
+   scrollbar-color: #DB8451 #1c1c1c;
    scrollbar-width: thin;
  }
 
@@ -115,7 +116,7 @@
  
  .msg-inputs .send-btn{
      font-size: 30px;
-     background-color: #181818; 
+     background-color: #1c1c1c; 
      color: #DB8451;
      border: 2px solid #DB8451;
      width: 5vw;
