@@ -21,14 +21,14 @@ def get_csrf_token(request):
     return request.COOKIES.get('csrftoken', '')
 
 def api_call(request):
-    debug = True
+    debug = False
     if not debug:
         body = json.loads(request.body)
         message = body.get('message')
         print("Received message:", message)
 
         # Define the URL
-        url = 'http://10.161.7.227:5005/webhooks/rest/webhook'
+        url = 'http://172.20.10.4:5005/webhooks/rest/webhook'
 
         # Create the headers with Content-Type and X-CSRFToken
         headers = {
@@ -47,8 +47,14 @@ def api_call(request):
 
         # Make the POST request
         response = requests.post(url, headers=headers, data=json_data)
-        print(response.text)
+
+        responseCopy = {}
+
+        if len(response.json()) > 1:
+            responseCopy['image'] = response.json()[1]['image']
+
         text = response.json()[0]['text']
+
         if '\n' in text:
             text = text.replace('\n', '<br>')
         if '\t' in text:
@@ -56,8 +62,12 @@ def api_call(request):
         if '^' in text:
             text = text.split('^')
 
-        return JsonResponse(text, safe=False)
+        responseCopy['text'] = text
+
+        print('\n\n', responseCopy)
+
+        return JsonResponse(responseCopy, safe=False)
     else:
         return JsonResponse([
-            "Please stop texting me!<br>&emsp;&emsp;This is a test","I don't know who you are."
+            "Please stop texting me!","I don't know who you are."
         ], safe=False)

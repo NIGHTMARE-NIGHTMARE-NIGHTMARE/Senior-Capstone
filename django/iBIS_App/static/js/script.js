@@ -188,7 +188,7 @@ function sendMessage() {
                     function displayMessage(index) {
                         if (index < data.length) {
                         const item = data[index];
-                        const words = item.split(' ');
+                        const words = item.text.split(' ');
 
                         const ibisMessage = document.createElement('p');
                         ibisMessage.textContent = "";
