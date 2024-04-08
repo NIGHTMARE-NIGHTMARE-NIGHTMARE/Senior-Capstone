@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const messageArea = document.querySelector(".message-area>div");
     
-    var text1 = "Hi I'm Ibis!";
+    var text1 = "Hi! I'm Oliver the Ibis!";
     var text2 = "Do you want to learn about search or sort algorithms? We have data for definitions, pseudocode, visuals, and additional resources.";
 
     const words1 = text1.split(' ');
