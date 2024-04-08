@@ -106,7 +106,7 @@
     border-radius: 5px;
     overflow: hidden;
     width: 85%;
-    height: max(8vh, 110px);
+    height: min(8vh, 110px);
     margin: 0 auto;
  }
  .msg-inputs ::placeholder{
