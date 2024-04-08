@@ -50,7 +50,7 @@ function sendMessage() {
 
     var waitTime = 80;
 
-    debug = true;
+    debug = false;
     
     // if there is a message to send
     if(message.value){
@@ -175,7 +175,7 @@ function sendMessage() {
 
                 console.log("Response JSON:", data);
                 // handle response data
-                if (data && data.length > 0) {
+                if (data.text && data.text.length > 0) {
                     const messageDiv = document.createElement('div'); // create message div
 
                     // create oliver's name
@@ -186,9 +186,9 @@ function sendMessage() {
 
                     // Function to display each message
                     function displayMessage(index) {
-                        if (index < data.length) {
-                        const item = data[index];
-                        const words = item.text.split(' ');
+                        if (index < data.text.length) {
+                        const item = data.text[index];
+                        const words = item.split(' ');
 
                         const ibisMessage = document.createElement('p');
                         ibisMessage.textContent = "";
@@ -215,7 +215,7 @@ function sendMessage() {
                             }, 500);
                         });
 
-                        console.log("Rasa Message:", item.text);
+                        console.log("Rasa Message:", item);
                         } else {
                         // Clear input after sending all messages
                         message.focus(); // refocus input
@@ -224,6 +224,15 @@ function sendMessage() {
 
                     // Start displaying messages with the first one
                     displayMessage(0);
+
+                    if (data.image){
+                        console.log(data.image);
+
+                        const ibisImage = document.createElement('img');
+                        ibisImage.src = data.image;
+                        ibisImage.className = `ibis message ibis-image`;
+                        messageDiv.appendChild(ibisImage);
+                    }
 
                     area.appendChild(messageDiv);
                 } 

@@ -21,11 +21,11 @@ def get_csrf_token(request):
     return request.COOKIES.get('csrftoken', '')
 
 def api_call(request):
-    debug = False
+    debug = True
     if not debug:
         body = json.loads(request.body)
         message = body.get('message')
-        print("Received message:", message)
+        print("Received message from USER:", message)
 
         # Define the URL
         url = 'http://172.20.10.4:5005/webhooks/rest/webhook'
@@ -48,6 +48,8 @@ def api_call(request):
         # Make the POST request
         response = requests.post(url, headers=headers, data=json_data)
 
+        print('Received JSON from RASA:',response.json())
+
         responseCopy = {}
 
         if len(response.json()) > 1:
@@ -68,6 +70,4 @@ def api_call(request):
 
         return JsonResponse(responseCopy, safe=False)
     else:
-        return JsonResponse([
-            "Please stop texting me!","I don't know who you are."
-        ], safe=False)
+        return JsonResponse({'image': 'https://www.simplilearn.com/ice9/free_resources_article_thumb/Linear-Search-Algorithm-Soni/what-is-linear-search-algorithm.png', 'text': ['This is a visual of how it works.', 'Would you like to see additional resources?']}, safe=False)
