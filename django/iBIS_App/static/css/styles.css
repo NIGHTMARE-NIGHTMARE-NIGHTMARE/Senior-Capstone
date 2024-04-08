@@ -40,7 +40,7 @@
   }
 
   .sticky-content {
-    background-color: light-dark(#DB8451, #1c1c1c);
+    background-color: light-dark(#d99771, #1c1c1c);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -49,7 +49,7 @@
     width: 100vw;
     top: 0;
     align-items: center;
-    box-shadow: 0 0 0.75rem #DB8451, 0 10px 20px light-dark(white, #252525);
+    box-shadow: 0 0 0.75rem light-dark(#d99771, #DB8451), 0 10px 20px light-dark(white, #252525);
   }
 
   .sticky-content img{
@@ -117,14 +117,14 @@
    font-size: 18px;
    width: 95%;
    overflow-wrap: break-word;
-   background-color: light-dark(#DB8451, #1c1c1c);
+   background-color: light-dark(#d99771, #1c1c1c);
    color: light-dark(#F2E7DC, #DB8451);
    border: 2px solid light-dark(#F2E7DC, #DB8451);
    resize: none;
    padding: 10px 10px;
    margin: 0 -2px 0 0;
    border-radius: 5px 0 0 5px;
-   scrollbar-color: #DB8451 light-dark(#efd8c2, #1c1c1c);
+   scrollbar-color: light-dark(#d99771, #DB8451) light-dark(#efd8c2, #1c1c1c);
    scrollbar-width: thin;
  }
 
@@ -134,7 +134,7 @@
  
  .msg-inputs .send-btn{
      font-size: 30px;
-     background-color: light-dark(#DB8451, #1c1c1c); 
+     background-color: light-dark(#d99771, #1c1c1c); 
      color: light-dark(#F2E7DC, #DB8451);
      border: 2px solid light-dark(#F2E7DC, #DB8451);
      width: 5vw;
@@ -145,7 +145,7 @@
    
  .send-btn:hover {
    background-color: light-dark(#F2E7DC, #DB8451);
-   color: light-dark(#DB8451, #F2E7DC);
+   color: light-dark(#d99771, #F2E7DC);
    cursor: pointer;
  }
 
@@ -157,7 +157,7 @@
   padding-bottom: 5vh;
   overflow: scroll;
   overflow-x: hidden;
-  scrollbar-color: #DB8451 light-dark(white, #252525);
+  scrollbar-color: light-dark(#d99771, #DB8451) light-dark(white, #252525);
   scrollbar-width: thin;
 
  }
@@ -179,7 +179,7 @@
  }
 
  .message-area .user{
-  background-color: #DB8451;
+  background-color: light-dark(#d99771, #DB8451);
   margin: 15px 0px;
   margin-left: auto;
  }
