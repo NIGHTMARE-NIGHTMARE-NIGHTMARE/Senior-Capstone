@@ -139,7 +139,7 @@ function sendMessage() {
         else{
 
             // call api
-            fetch(`http://127.0.0.1:8000/api/`, {
+            fetch(`${hostURL}/api/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
