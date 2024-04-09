@@ -15,97 +15,6 @@ entities:
   - algorithm
 
 responses:
-  #! Hard code greeting to be at top
-  # utter_choose_category:
-  #   - text: "Do you want to learn about search or sort algorithms? We have data for definitions, pseudocode, visuals, and additional resources."
-
-  # utter_category:
-  #   - text: "The definition of {category} algorithm is: "
-  #   - text: "A {category} algorithm is defined as: "
-  #   - text: "We can describe {category} algorithm as: "
-
-  # utter_search_definition:
-  #   - text: "A systematic procedure or method used to locate specific data within a collection or dataset. It involves examining each element of the dataset in a structured manner until the desired data is found or determined to be absent."
-  #   - text: "A computational technique designed to efficiently retrieve information from a data structure. It typically involves evaluating the contents of the data structure and applying predefined rules or conditions to identify the target data."
-  #   - text: "A procedure that navigates through a collection of elements, such as an array or a tree, to locate a particular value or determine its nonexistence. The algorithm's efficiency is measured based on factors such as time complexity and space complexity."
-
-  # utter_sort_definition:
-  #   - text: "A procedure used to arrange elements in a specific order within a collection or dataset. It systematically compares and reorganizes elements based on predetermined criteria to achieve ascending or descending order."
-  #   - text: "A computational technique designed to rearrange elements within a data structure in a specified order. It involves comparing elements and swapping their positions based on defined comparison rules to achieve sorted output."
-  #   - text: "A set of instructions or rules that dictate how to organize elements within a dataset into a desired order, such as ascending or descending. It is commonly used in data processing and analysis to facilitate efficient searching, indexing, and retrieval operations."
-
-  # utter_search_algorithms:
-  #   - text: "Here are some search algorithms: \n\t- Linear Search\n\t- Binary Search\n\t- Bredth First Search (BFS)\n\t- Depth First Search (DFS) \nPlease select one to start!"
-
-  # utter_sort_algorithms:
-  #   - text: "Sure! Here are some sort algorithms:\n\t- Quicksort\n\t- Heap Sort\n\t- Merge Sort\n\t- Bubble Sort\t\n- Insertion Sort \nPlease select one to start!"
-
-  # utter_more_info:
-  #   - text: "Would you like to learn more on {algorithm} {category}?"
-  #   - text: "Do you want me to provide more information?"
-  #   - text: "Shall we keep going?"
-  #   - text: "Want more info?"
-  #   - text: "Should I keep going?"
-  #   - text: "Wanna keep learning about {algorithm} {category}?"
-  #   - text: "Do you want more info on {algorithm} {category}?"
-  #   - text: "Should I keep yapping about this?"
-
-  # utter_algorithm_definition:
-  #   - text: "The definition of {algorithm} {category} is: "
-  #   - text: "Here is the definition of {algorithm} {category}:"
-  #   - text: "Let's define {algorithm} {category}: "
-
-  # utter_algorithm_pseudocode:
-  #   - text: "Here is the pseudocode for {algorithm} {category}: "
-  #   - text: "The pseudocode for {algorithm} {category} is:"
-  #   - text: "Below is the pseudocode for {algorithm} {category}."
-
-  # utter_algorithm_resources:
-  #   - text: "Here are some more resources for {algorithm} {category}: "
-  #   - text: "Here's a few external resources related to {algorithm} {category}:"
-  #   - text: "For more information on {algorithm} {category}, check out: "
-  #   - text: "More info on {algorithm} {category} can be found at: "
-
-  # utter_algorithm_visual:
-  #   - text: "Do you want to see a visual on {algorithm} {category}?"
-  #   - text: "Wanna visual to see {algorithm} {category} in work?"
-  #   - text: "Should I show you a visual of what {algorithm} {category} looks like in practice?"
-
-  # utter_linear_definition:
-  #   - text: "This is linear definition"
-
-  # utter_linear_pseudocode:
-  #   - text: "This is linear pseudocode"
-
-  # utter_linear_visual:
-  #   - text: "This is linear visual"
-
-  # utter_linear_resources:
-  #   - text: "This is linear resources"
-
-  # utter_binary_definition:
-  #   - text: "This is binary definition"
-
-  # utter_quicksort_definition:
-  #   - text: "This is quicksort definition"
-
-  # utter_quicksort_pseudocode:
-  #   - text: "This is quicksort pseudocode"
-
-  # utter_quicksort_visual:
-  #   - text: "This is quicksort visual"
-
-  # utter_quicksort_resources:
-  #   - text: "This is quicksort resources"
-
-  # utter_bubble_definition:
-  #   - text: "This is bubble definition"
-
-  # utter_no_more:
-  #   - text: "That is all the information I currently have for {algorithm} {category}. Thanks for learning!"
-  #   - text: "That is the current extend of my knowledge on {algorithm} {category}. I hope that helped!"
-  #   - text: "That's all I've got! Check back soon for more information related to {algorithm} {category}."
-
   utter_goodbye:
     - text: "Goodbye! If you have any more questions, feel free to ask."
     - text: "See ya! I am always here if you have more questions"
@@ -121,29 +30,36 @@ responses:
     - text: "Looks like you are a little off topic. How about you lock back in?"
     - text: "You know it's not my job to talk about things besides algorithms. You really want to keep trying? Get back to what I said."
 
-
-
   utter_search:
     - text: "The definition of search algorithm can be described as: ^A procedure that navigates through a collection of elements, such as an array or a tree, to locate a particular value or determine its nonexistence. The algorithm's efficiency is measured based on factors such as time complexity and space complexity.^Here are some search algorithms: \n\t- Linear Search\n\t- Binary Search\n\t- Bredth First Search (BFS)\n\t- Depth First Search (DFS) \nPlease select one to start!"
-  utter_linear_def:
-    - text: "This is the definition of linear search.^Would you like to see pseudocode?"
-  utter_linear_code:
-    - text: "This is a code example.^Do you want to see a visual?"
-  utter_linear_visual:
-    - text: "This is a visual of how it works.^Would you like to see additional resources?"
-  utter_linear_resources:
-    - text: "These are linear resources.^That is all the information I currently have for linear search algorithms. If there are any other algorithms I can help you with, feel free to ask! See ya!"
 
   utter_sort:
-    - text: "The definition of sort algorithm can be described as: ^A computational technique designed to rearrange elements within a data structure in a specified order. It involves comparing elements and swapping their positions based on defined comparison rules to achieve sorted output.^Here are some sort algorithms:\n\t- Quicksort\n\t- Heap Sort\n\t- Merge Sort\n\t- Bubble Sort\t\n- Insertion Sort \nPlease select one to start!"
+    - text: "The definition of sort algorithm can be described as: ^A computational technique designed to rearrange elements within a data structure in a specified order. It involves comparing elements and swapping their positions based on defined comparison rules to achieve sorted output.^Here are some sort algorithms:\n\t- Quicksort\n\t- Heap Sort\n\t- Merge Sort\n\t- Bubble Sort\n\t- Insertion Sort \nPlease select one to start!"
+
+  utter_linear_def:
+    - text: "Linear Search can be defined as:^A straightforward searching algorithm that scans through a collection of elements in a sequential manner, comparing each element with the target value until a match is found or the end of the list is reached.^Would you like to see pseudocode?"
+  utter_linear_code:
+    - text: "Here is the pseudocode:\n^Do you want to see a visual?"
+      image: "https://miro.medium.com/v2/resize:fit:1400/1*vaVmPAMpElIKI6QgYD5QBg.png"
+  utter_linear_visual:
+    - text: "This should help visualize how it works: .^Would you like to see additional resources?"
+      image: "https://www.tutorialspoint.com/data_structures_algorithms/images/linear_search.gif"
+  utter_linear_resources:
+    - text: "Here are some additional resources for linear search algorithms:\n\t- https://www.geeksforgeeks.org/linear-search/ \n\t- https://www.programiz.com/dsa/linear-search ^That is all the information I currently have for linear search algorithms. If there are any other algorithms I can help you with, feel free to ask! See ya!"
+
   utter_quicksort_def:
-    - text: "This is the definition of quicksort.^Wanna see some pseudocode?"
+    - text: "Quicksort can be defined as:^A comparison-based sorting algorithm that follows the divide-and-conquer paradigm. The algorithm works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then recursively sorted. This process continues until the entire array is sorted.^Wanna see how the code works?"
   utter_quicksort_code:
     - text: "This is a code example.^Would you like a visual?"
+      image: "https://www.researchgate.net/publication/332434596/figure/fig1/AS:749266318417921@1555650419190/Pseudocode-of-quicksort-adapted-from-1.png"
   utter_quicksort_visual:
-    - text: "This is a visual of how it works.^Do you want some additional resources?"
+    - text: "This example visually demonstrates how it works: ^Would you like some external resources?"
+      image: "https://www.tutorialspoint.com/data_structures_algorithms/images/quick_sort_partition_animation.gif"
   utter_quicksort_resources:
-    - text: "These are quicksort resources.^That is all the information I currently have for linear search algorithms. If there are any other algorithms I can help you with, feel free to ask! See ya!"
+    - text: "These are some helpful links to learn about the quicksort algorithm:\n\t- https://www.geeksforgeeks.org/quick-sort/\n\t- https://www.programiz.com/dsa/quick-sort ^That's all I've got today for quicksort. I'm always here if you want to learn about another algorithm! Talk to you later!"
+
+  utter_bubble_def:
+    - text: "Bubble Sort can be defined as:^A simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm gets its name from the way smaller or larger elements \"bubble up\" to the top of the list.^Should I go over a code example?"
 
 
 slots:
