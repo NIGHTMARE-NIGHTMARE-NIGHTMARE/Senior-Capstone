@@ -55,6 +55,10 @@ nlu:
       - that would be helpful
       - sure thing
       - yea
+      - sure
+      - i guess
+      - yes please
+      - i'd like that
 
   - intent: deny
     examples: |
@@ -75,6 +79,8 @@ nlu:
       - not currently
       - not atm
       - no i'm good
+      - maybe later
+      - not at this time
 
   - intent: bot_challenge
     examples: |
