@@ -1,5 +1,5 @@
 rasa:
-  url: "http://100.70.102.193:5005/webhooks/rest/webhook"
+  url: "http://172.20.10.4:5005/webhooks/rest/webhook"
 # This file contains the different endpoints your bot can use.
 
 # Server where the models are pulled from.

@@ -7,6 +7,8 @@ stories:
         entities:
           - category: "search"
       - action: utter_search
+      - slot_was_set:
+          - category: "search"
       - intent: select_algorithm
         entities:
           - algorithm: "linear"
@@ -21,110 +23,42 @@ stories:
           - category: "search"
           - algorithm: "linear"
 
-  - story: quicksort
-    steps:
-      - intent: choose_category
-        entities:
-          - category: "sort"
-      - action: utter_sort
-      - intent: select_algorithm
-        entities:
-          - algorithm: "quicksort"
-      - action: utter_quicksort_def
-      - intent: affirm
-      - action: utter_quicksort_code
-      - intent: affirm
-      - action: utter_quicksort_visual
-      - intent: affirm
-      - action: utter_quicksort_resources
-      - slot_was_set:
-          - category: "sort"
-          - algorithm: "quicksort"
-
-  # - story: linear
-  #   steps:
-  #     - intent: greet
-  #     - action: utter_choose_category
-  #     - intent: choose_category
-  #       entities:
-  #         - category: "search"
-  #     - action: utter_category
-  #     - action: utter_search_definition
-  #     - action: utter_search_algorithms
-  #     - intent: select_algorithm
-  #       entities:
-  #         - algorithm: "linear"
-  #     - action: utter_algorithm_definition
-  #     - action: utter_linear_definition
-  #     - action: utter_more_info
-  #     - intent: affirm
-  #     - action: utter_algorithm_pseudocode
-  #     - action: utter_linear_pseudocode
-  #     - action: utter_more_info
-  #     - intent: affirm
-  #     - action: utter_algorithm_visual
-  #     - action: utter_linear_visual
-  #     - action: utter_more_info
-  #     - intent: affirm
-  #     - action: utter_algorithm_resources
-  #     - action: utter_linear_resources
-  #     - action: utter_no_more
-  #     - action: utter_goodbye
-  #     - slot_was_set:
-  #         - category: "search"
-  #         - algorithm: "linear"
-
   # - story: quicksort
   #   steps:
-  #     - intent: greet
-  #     - action: utter_choose_category
   #     - intent: choose_category
   #       entities:
   #         - category: "sort"
-  #     - action: utter_category
-  #     - action: utter_sort_definition
-  #     - action: utter_sort_algorithms
+  #     - action: utter_sort
+  #     - slot_was_set:
+  #         - category: "sort"
   #     - intent: select_algorithm
   #       entities:
   #         - algorithm: "quicksort"
-  #     - action: utter_algorithm_definition
-  #     - action: utter_quicksort_definition
-  #     - action: utter_more_info
+  #     - action: utter_quicksort_def
   #     - intent: affirm
-  #     - action: utter_algorithm_pseudocode
-  #     - action: utter_quicksort_pseudocode
-  #     - action: utter_more_info
+  #     - action: utter_quicksort_code
   #     - intent: affirm
-  #     - action: utter_algorithm_visual
   #     - action: utter_quicksort_visual
-  #     - action: utter_more_info
   #     - intent: affirm
-  #     - action: utter_algorithm_resources
   #     - action: utter_quicksort_resources
-  #     - action: utter_no_more
-  #     - action: utter_goodbye
   #     - slot_was_set:
   #         - category: "sort"
   #         - algorithm: "quicksort"
 
-  # - story: binary
+  # - story: bubble
   #   steps:
-  #     - intent: greet
-  #     - action: utter_choose_category
   #     - intent: choose_category
   #       entities:
-  #         - category: "search"
-  #     - action: utter_category
-  #     - action: utter_search_definition
-  #     - action: utter_search_algorithms
+  #         - category: "sort"
+  #     - action: utter_sort
+  #     - slot_was_set:
+  #         - category: "sort"
   #     - intent: select_algorithm
   #       entities:
-  #         - algorithm: "binary"
-  #     - action: utter_algorithm_definition
-  #     - action: utter_binary_definition
-  #     - action: utter_more_info
+  #         - algorithm: "bubble"
+  #     - action: utter_bubble_def
   #     - intent: deny
   #     - action: utter_goodbye
-  #     - slot_was_set:
-  #         - category: "search"
-  #         - algorithm: "binary"
+  #     - slot_was_set: 
+  #         - category: "sort"
+  #         - algorithm: "bubble"
