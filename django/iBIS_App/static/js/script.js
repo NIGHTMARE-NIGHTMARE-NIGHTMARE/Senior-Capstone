@@ -44,6 +44,22 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Check if this cookie name is the one we want
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
 function sendMessage() {
     const message = document.querySelector("textarea.msg-input");
     const area = document.querySelector(".message-area");
@@ -137,7 +153,7 @@ function sendMessage() {
             }
         }
         else{
-
+            const csrfToken = getCookie('csrftoken');
             // call api
             fetch(`${hostURL}/api/`, {
                 method: 'POST',

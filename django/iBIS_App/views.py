@@ -1,12 +1,16 @@
 from django.shortcuts import render
 import requests
 import json
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+from django.middleware.csrf import get_token
 
 TEMPLATES_DIRS = (
     'os.path.join(BASE_DIR, "templates"),'
 )
 def home(request):
+    response = HttpResponse()
+    csrf_token = get_token(request)
+    response.set_cookie('csrftoken', csrf_token, samesite='Strict')
     host_url = f'http://{request.get_host()}'
     csrf_token = get_csrf_token(request)
 
