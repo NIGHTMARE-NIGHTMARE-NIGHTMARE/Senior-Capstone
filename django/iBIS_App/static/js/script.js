@@ -66,48 +66,74 @@ function sendMessage() {
 
     var waitTime = 80;
 
-    debug = false;
-    
     // if there is a message to send
     if(message.value){
         message.blur(); // unfocus input
+        const csrfToken = getCookie('csrftoken');
+        // call api
+        fetch(`${hostURL}/api/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken':csrfToken,
+            },
+            body: JSON.stringify({
+                "message": message.value,
+                "sender": "User"
+            }),
+        })
 
-        if (debug){
+        // clean first response and convert to JSON
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            console.log("Response:", response);
+            return response.json();  // Parse response as JSON
+        })
+
+        // Render the response
+        .then(data => {
+            console.log("Message to send:", message.value);
+
             // add user's message to stream
             const userMessage = document.createElement('p');
             userMessage.textContent = message.value;
             userMessage.className = `user message`;
             area.appendChild(userMessage); // add to the chat area
+            area.scrollTop = area.scrollHeight;
 
             message.value = "";
 
-            const data = [
-                {
-                    "text": "This is a test message from rasa!",
-                },
-                {
-                    "text": "This is rasa's second message so we can handle 2 messages at once."
-                }
-            ];
-
             console.log("Response JSON:", data);
-
             // handle response data
-            if (data && data.length > 0) {
+            if (data.text && data.text.length > 0) {
                 const messageDiv = document.createElement('div'); // create message div
+
+                const nameLogo = document.createElement('div');
+                nameLogo.className = `name-logo`;
+
+                // create oliver's logo
+                const ibisLogo = document.createElement('img');
+                ibisLogo.src = oliverImgSrc;
+                ibisLogo.height = '30';
+                ibisLogo.width = '30';
+                
+                nameLogo.appendChild(ibisLogo);
 
                 // create oliver's name
                 const ibisName = document.createElement('p');
                 ibisName.textContent = "Oliver";
                 ibisName.className = `ibis-top`;
-                messageDiv.appendChild(ibisName);
-                area.scrollTop = area.scrollHeight;
+                nameLogo.appendChild(ibisName);
+
+                messageDiv.appendChild(nameLogo);
 
                 // Function to display each message
                 function displayMessage(index) {
-                    if (index < data.length) {
-                    const item = data[index];
-                    const words = item.text.split(' ');
+                    if (index < data.text.length) {
+                    const item = data.text[index];
+                    const words = item.split(' ');
 
                     const ibisMessage = document.createElement('p');
                     ibisMessage.textContent = "";
@@ -118,7 +144,7 @@ function sendMessage() {
                     const messagePromise = new Promise((resolve) => {
                         words.forEach((word, wordIndex) => {
                         setTimeout(() => {
-                            ibisMessage.textContent += (wordIndex > 0 ? ' ' : '') + word;
+                            ibisMessage.innerHTML += (wordIndex > 0 ? ' ' : '') + word;
                             if (wordIndex === words.length - 1) {
                             resolve(); // Resolve the promise when message is complete
                             }
@@ -134,7 +160,7 @@ function sendMessage() {
                         }, 500);
                     });
 
-                    console.log("Rasa Message:", item.text);
+                    console.log("Rasa Message:", item);
                     } else {
                     // Clear input after sending all messages
                     message.focus(); // refocus input
@@ -144,6 +170,15 @@ function sendMessage() {
                 // Start displaying messages with the first one
                 displayMessage(0);
 
+                if (data.image){
+                    console.log(data.image);
+
+                    const ibisImage = document.createElement('img');
+                    ibisImage.src = data.image;
+                    ibisImage.className = `ibis message ibis-image`;
+                    messageDiv.appendChild(ibisImage);
+                }
+
                 area.appendChild(messageDiv);
             } 
             else {
@@ -151,156 +186,49 @@ function sendMessage() {
                 // Clear input after sending
                 message.focus(); // refocus input
             }
-        }
-        else{
-            const csrfToken = getCookie('csrftoken');
-            // call api
-            fetch(`${hostURL}/api/`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRFToken':csrfToken,
-                },
-                body: JSON.stringify({
-                    "message": message.value,
-                    "sender": "User"
-                }),
-            })
+        })
+        .catch(error => {
+            const main = document.querySelector("main");
 
-            // clean first response and convert to JSON
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                console.log("Response:", response);
-                return response.json();  // Parse response as JSON
-            })
+            console.error("Error:", error);
+            const errorMessage = document.createElement('div');
+            const header = document.createElement('h2');
+            const errorText = document.createElement('p');
+            header.textContent = "An Error Occurred";
+            errorText.textContent = "Try again in 5 seconds";
 
-            // Render the response
-            .then(data => {
-                console.log("Message to send:", message.value);
+            errorMessage.appendChild(header);
+            errorMessage.appendChild(errorText);
 
-                // add user's message to stream
-                const userMessage = document.createElement('p');
-                userMessage.textContent = message.value;
-                userMessage.className = `user message`;
-                area.appendChild(userMessage); // add to the chat area
-                area.scrollTop = area.scrollHeight;
+            errorMessage.className = `error-message`;
+            errorMessage.style.opacity = "0"; // Start with opacity 0
+            main.appendChild(errorMessage);
 
-                message.value = "";
+            let i = 4; // count to hit
 
-                console.log("Response JSON:", data);
-                // handle response data
-                if (data.text && data.text.length > 0) {
-                    const messageDiv = document.createElement('div'); // create message div
+            const fadeIn = setInterval(() => {
+                let opacity = parseFloat(errorMessage.style.opacity);
+                errorMessage.style.opacity = (opacity + 0.1).toString();
 
-                    // create oliver's name
-                    const ibisName = document.createElement('p');
-                    ibisName.textContent = "Oliver";
-                    ibisName.className = `ibis-top`;
-                    messageDiv.appendChild(ibisName);
+                if (opacity >= 1) {
+                    clearInterval(fadeIn);
 
-                    // Function to display each message
-                    function displayMessage(index) {
-                        if (index < data.text.length) {
-                        const item = data.text[index];
-                        const words = item.split(' ');
+                    const countdown = setInterval(() => {
+                        errorText.textContent = `Try again in ${i} seconds`;
+                        i--;
 
-                        const ibisMessage = document.createElement('p');
-                        ibisMessage.textContent = "";
-                        ibisMessage.className = `ibis message`;
-                        messageDiv.appendChild(ibisMessage);
-
-                        // Promise to wait for the message to complete
-                        const messagePromise = new Promise((resolve) => {
-                            words.forEach((word, wordIndex) => {
+                        if (i < 1) {
+                            clearInterval(countdown);
+                            errorMessage.style.transition = "opacity 1s";
+                            errorMessage.style.opacity = "0";
                             setTimeout(() => {
-                                ibisMessage.innerHTML += (wordIndex > 0 ? ' ' : '') + word;
-                                if (wordIndex === words.length - 1) {
-                                resolve(); // Resolve the promise when message is complete
-                                }
-                                area.scrollTop = area.scrollHeight;
-                            }, wordIndex * waitTime);
-                            });
-                        });
-
-                        // After the promise is resolved, call the next message
-                        messagePromise.then(() => {
-                            setTimeout(() => {
-                                displayMessage(index + 1);
-                            }, 500);
-                        });
-
-                        console.log("Rasa Message:", item);
-                        } else {
-                        // Clear input after sending all messages
-                        message.focus(); // refocus input
+                                main.removeChild(errorMessage);
+                                message.focus();
+                            }, 1000); // wait for the transition to complete before removing
                         }
-                    }
-
-                    // Start displaying messages with the first one
-                    displayMessage(0);
-
-                    if (data.image){
-                        console.log(data.image);
-
-                        const ibisImage = document.createElement('img');
-                        ibisImage.src = data.image;
-                        ibisImage.className = `ibis message ibis-image`;
-                        messageDiv.appendChild(ibisImage);
-                    }
-
-                    area.appendChild(messageDiv);
-                } 
-                else {
-                    console.log("No response from Rasa.");
-                    // Clear input after sending
-                    message.focus(); // refocus input
+                    }, 1000);
                 }
-            })
-            .catch(error => {
-                const main = document.querySelector("main");
-
-                console.error("Error:", error);
-                const errorMessage = document.createElement('div');
-                const header = document.createElement('h2');
-                const errorText = document.createElement('p');
-                header.textContent = "An Error Occurred";
-                errorText.textContent = "Try again in 5 seconds";
-
-                errorMessage.appendChild(header);
-                errorMessage.appendChild(errorText);
-
-                errorMessage.className = `error-message`;
-                errorMessage.style.opacity = "0"; // Start with opacity 0
-                main.appendChild(errorMessage);
-
-                let i = 4; // count to hit
-
-                const fadeIn = setInterval(() => {
-                    let opacity = parseFloat(errorMessage.style.opacity);
-                    errorMessage.style.opacity = (opacity + 0.1).toString();
-
-                    if (opacity >= 1) {
-                        clearInterval(fadeIn);
-
-                        const countdown = setInterval(() => {
-                            errorText.textContent = `Try again in ${i} seconds`;
-                            i--;
-
-                            if (i < 1) {
-                                clearInterval(countdown);
-                                errorMessage.style.transition = "opacity 1s";
-                                errorMessage.style.opacity = "0";
-                                setTimeout(() => {
-                                    main.removeChild(errorMessage);
-                                    message.focus();
-                                }, 1000); // wait for the transition to complete before removing
-                            }
-                        }, 1000);
-                    }
-                }, 0);
-            });
-        }
+            }, 0);
+        });
     }
 }
