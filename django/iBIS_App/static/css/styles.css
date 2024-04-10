@@ -218,10 +218,10 @@
 
  .name-logo {
   display: flex;
-  align-items: center;
+  align-items: top;
   gap: 5px;
   margin-left: -42px;
-  margin-bottom: -12px;
+  margin-bottom: -20px;
  }
  .name-logo img{
   background-color: #a84338;
