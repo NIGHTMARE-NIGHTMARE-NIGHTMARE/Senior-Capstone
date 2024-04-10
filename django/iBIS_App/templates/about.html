@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{}
+{% load static %}
 {% block title%}About - {% endblock %}
 {% block content %}
 
@@ -7,6 +7,144 @@
     <title>About</title>
     <!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css" media="all"> -->
 </head>
+
+<body>
+    <header>
+      <h1>iBIS: Interactive Bot for In-Depth Study</h1>
+    </header>
+    <div class="content">
+      <section id="about">
+        <h2>About iBIS</h2>
+        <hr style="height: 2px;">
+        <p class="intro">Say hello to the Interactive Bot for In-depth Study, or iBIS! <br><br>
+          With iBIS, we want to provide a tool for all levels of coders. Built with the detailed Rasa AI framework, and
+          connected with the leading back-end web framework of Django,
+          iBIS is designed to provide an in-depth and interactive learning environment tailored to each users needs. By
+          providing information on each algorithm, challenges, as well as pseudocode, iBIS is designed for the beginner
+          coders,
+          trying to learn each algorithm, as well as a intermediate and coding masters, who are looking to refresh their
+          skills.
+        </p>
+    </div>
+    </section>
+    <section id="team">
+        <h2>Say Hello to Our Team!</h2>
+        <hr style="height: 2px;">
+        <div id="member">
+            <img class="photo" src="{% static 'graphic/asian-crested-ibis.jpg' %}" alt="Oliver" height="120">
+          <div class="job">
+            <h3>Oliver</h3>
+            <p><b>Chief Morale Officer:</b> In charge of moral support. Responsible for all final decisions and overall
+              direction of the project. Plus, he has great advice on algorithms!
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div id="member">
+            <img class="photo" src="{% static 'graphic/carson-spaniel-headshot.jpg' %}" alt="carson-spaniel-headshot" height="120">
+            <div class="job">
+              <h3>Carson Spaniel</h3>
+              <p><b>Project Lead:</b> In charge of overseeing the project, delegating tasks, ensuring the quality and
+                completion of work, and providing assistance as necessary. </p>
+              <a href="mailto:cspaniel@ttu.edu" class="email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rust-red" class="bi bi-envelope-fill"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
+                </svg>
+                cspaniel@ttu.edu
+              </a>
+            </div>
+          </div>
+          <hr>
+          <div id="member">
+            <img class="photo" src="{% static 'graphic/kaitlyn-min.jpg' %}" alt="kaitlyn-min.jpg" height="120">
+            <div class="job">
+              <h3>Kaitlyn Urano</h3>
+              <p><b>Chatbot Engineer:</b> In charge of leading the development of the initial chatbot, formulating its
+                structure, and creating the user interaction flow to facilitate decision-making and inputs.</p>
+              <a href="mailto:kurano@ttu.edu" class="email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rust-red" class="bi bi-envelope-fill"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
+                </svg>
+                kurano@ttu.edu
+              </a>
+            </div>
+          </div>
+          <hr>
+          <div id="member">
+            <img class="photo" src="{% static 'graphic/Rafael_Arellanes_Photo.jpg' %}" alt="Rafael_Arellanes_Photo.jpg" height="120">
+            <div class="job">
+              <h3>Rafael Arellanes</h3>
+              <p><b>Chatbot Engineer:</b> In charge of integrating training set data for Natural Language Understanding (NLU).
+              </p>
+              <a href="mailto:rafarel@ttu.edu" class="email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rust-red" class="bi bi-envelope-fill"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
+                </svg>
+                rafarel@ttu.edu
+              </a>
+            </div>
+          </div>
+          <hr>
+          <div id="member">
+            <img class="photo" src="{% static 'graphic/bailey_carlton_headshot.jpg' %}" alt="bailey_carlton_headshot.jpg" height="120">
+            <div class="job">
+              <h3>Bailey Carlton</h3>
+              <p><b>Front-End Engineer:</b> In charge of crafting the design and style of the chatbot website, as well as
+                integrating all user-interaction elements.</p>
+              <a href="mailto:bacarlto@ttu.edu" class="email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rust-red" class="bi bi-envelope-fill"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
+                </svg>
+                bacarlto@ttu.edu
+              </a>
+            </div>
+          </div>
+          <hr>
+          <div id="member">
+            <img class="photo" src="{% static 'graphic/Adam_Gideon_Headshot.jpg' %}" alt="Adam_Gideon_Headshot.jpg" height="120">
+            <div class="job">
+              <h3>Adam Gideon</h3>
+              <p><b>Back-End Engineer:</b> In charge of generating front-end files, executing CRUD operations on Django
+                Models, and developing an API to handle throttling, permissions, and response delivery.</p>
+              <a href="mailto:adgideon@ttu.edu" class="email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rust-red" class="bi bi-envelope-fill"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
+                </svg>
+                adgideon@ttu.edu
+              </a>
+            </div>
+          </div>
+          <hr>
+          <div id="member">
+            <img class="photo" src="{% static 'graphic/carson-arches.jpg' %}" alt="carson-arches.jpg" height="120">
+            <div class="job">
+              <h3>Carson Henderson</h3>
+              <p><b>Research and Development Engineer:</b> In charge of gathering relevant resources concerning algorithms and
+                furnishing essential technical research to various team departments as needed.
+              </p>
+              <a href="mailto:carson.henderson@ttu.edu" class="email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rust-red" class="bi bi-envelope-fill"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
+                </svg>
+                carson.henderson@ttu.edu
+              </a>
+            </div>
+          </div>
+
+      </section>
+</body>
 
 
 {% endblock %}
