@@ -14,15 +14,20 @@
 <body>
     <div class="message-area">
         <div>
-            <p class="ibis-top">Oliver</p>
+            <div class="name-logo">
+                <div><img src="{% static 'graphic/png_darkmode-logoonly.png' %}" height="30" width="30"></div>
+                <div><p class="ibis-top">Oliver</p></div>
+            </div>
         </div>
     </div>
     
     <div class="bottom-shadow"></div>
+    <div>
     <div class="msg-inputs">
         <textarea class="msg-input" placeholder="Message" name="message" id="message" required></textarea>
         <button class="send-btn" type="button" name="send" id="send-btn" onclick="sendMessage()">></button>
     </div>
+</div>
     <script>
         var messageInput = document.getElementById("message");
 

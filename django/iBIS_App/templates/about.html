@@ -5,7 +5,173 @@
 
 <head>
     <title>About</title>
-    <!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css" media="all"> -->
+    <style>
+        :root {
+        --rust-red: #db6c51;
+        --light-orange: #db9c51;
+        --dark-orange: #db8451;
+        --gray: #3f3f3f;
+        --dark-gray: #222222;
+        --light-cream: #fff3e7;
+        --cream: #f0e0c9;
+        }
+
+        /* #about{
+        border: 2px solid var(--dark-gray);
+        border-radius: 20px;
+        padding: 20px;
+        margin: 20px 30px;
+        } */
+
+        .content {
+        text-align: left;
+        }
+
+        .intro {
+        max-width: 90%;
+        margin: 20px auto;
+        }
+
+        .bird-container {
+        display: flex;
+        justify-content: center;
+        }
+
+        .bird {
+        max-width: 20%;
+        }
+
+        h1{
+        text-align: center;
+        font-size: 40px;
+        font-weight: 600;
+        }
+
+        h2 {
+        font-size: 30px;
+        text-align: center;
+        }
+
+        h3 {
+        color: var(--rust-red);
+        }
+
+
+        #team {
+        background-color: var(--light-cream);
+        color: var(--gray);
+        padding: 20px;
+        padding-top: 0px;
+        }
+
+        #member{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 85%;
+        margin: 10px auto;
+        flex-wrap: wrap;
+        gap: 20px;
+        }
+
+        .photo{
+        max-height: 250px;
+        border-radius: 20px;
+        margin: 0 auto;
+        width: 185px;
+        height: 250px;
+        object-fit: cover;
+        object-position: 50% 50%; 
+        }
+
+        .job{
+        flex: 1;
+        max-width: 80%;
+        margin: 0 auto;
+        }
+
+        .email{
+        color: var(--dark-gray);
+        font-size: 15px;
+        text-decoration: none;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 10px;
+        }
+
+        #future {
+        background-color: var(--light-cream);
+        color: var(--gray);
+        padding: 0px;
+        }
+
+        .future {
+        max-width: 90%;
+        margin: 35px auto;
+        text-align: center;
+        }
+
+        #meetings {
+        background-color: var(--dark-orange);
+        color: var(--light-cream);
+        padding: 20px;
+        border-radius: 15px;
+        margin: 5px 5px 0;
+        margin-bottom: 20px;
+        }
+
+        footer {
+        background-color: var(--gray);
+        color: var(--light-cream);
+        padding: 20px;
+        text-align: center;
+        }
+
+        .meeting{
+        margin: 10px;
+        background-color: var(--light-cream);
+        border-radius: 15px;
+        padding: 10px;
+        }
+
+        .meeting *{
+        color: var(--gray);
+        }
+
+        .meeting h3{
+        color: var(--rust-red);
+        }
+
+        .meeting h4{
+        margin: 2px;
+        font-size: 14px;
+        padding-left: 25px;
+        }
+
+        .meeting p{
+        margin: 0;
+        padding-left: 25px;
+        }
+
+        .meeting li{
+        margin: 5px;
+        }
+
+        .about-main {
+            display: flex;
+            flex-direction: column;
+            color: light-dark(#252525, #F2E7DC);
+            height: 80vh;
+            padding: 20px 20px;
+            padding-bottom: 5vh;
+            overflow: scroll;
+            overflow-x: hidden;
+            scrollbar-color: light-dark(#d99771, #DB8451) light-dark(white, #252525);
+            scrollbar-width: thin;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,8 +181,6 @@
         </header>
         <div class="content">
         <section id="about">
-            <h2>About iBIS</h2>
-            <hr style="height: 2px;">
             <p class="intro">Say hello to the Interactive Bot for In-depth Study, or iBIS! <br><br>
             With iBIS, we want to provide a tool for all levels of coders. Built with the detailed Rasa AI framework, and
             connected with the leading back-end web framework of Django,
@@ -30,10 +194,9 @@
         </section>
         <section id="team">
             <h2>Say Hello to Our Team!</h2>
-            <hr style="height: 2px;">
             <div id="member">
                 <img class="photo" src="{% static 'graphic/asian-crested-ibis.jpg' %}" alt="Oliver" height="120">
-            <div class="job">
+                <div class="job">
                 <h3>Oliver</h3>
                 <p><b>Chief Morale Officer:</b> In charge of moral support. Responsible for all final decisions and overall
                 direction of the project. Plus, he has great advice on algorithms!
