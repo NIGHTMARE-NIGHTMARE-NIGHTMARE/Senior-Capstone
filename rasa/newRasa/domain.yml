@@ -39,7 +39,7 @@ responses:
   utter_linear_def:
     - text: "Linear Search can be defined as:^A straightforward searching algorithm that scans through a collection of elements in a sequential manner, comparing each element with the target value until a match is found or the end of the list is reached.^Would you like to see pseudocode?"
   utter_linear_code:
-    - text: "Here is the pseudocode:\n^Do you want to see a visual?"
+    - text: "Here is the pseudocode:\n^Do you want to see a visual of the search?"
       image: "https://miro.medium.com/v2/resize:fit:1400/1*vaVmPAMpElIKI6QgYD5QBg.png"
   utter_linear_visual:
     - text: "This should help visualize how it works: .^Would you like to see additional resources?"
@@ -50,11 +50,11 @@ responses:
   utter_quicksort_def:
     - text: "Quicksort can be defined as:^A comparison-based sorting algorithm that follows the divide-and-conquer paradigm. The algorithm works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then recursively sorted. This process continues until the entire array is sorted.^Wanna see how the code works?"
   utter_quicksort_code:
-    - text: "This is a code example.^Would you like a visual?"
+    - text: "This is a code example.^Would you like a visual demonstration?"
       image: "https://www.researchgate.net/publication/332434596/figure/fig1/AS:749266318417921@1555650419190/Pseudocode-of-quicksort-adapted-from-1.png"
   utter_quicksort_visual:
     - text: "This example visually demonstrates how it works: ^Would you like some external resources?"
-      image: "https://www.tutorialspoint.com/data_structures_algorithms/images/quick_sort_partition_animation.gif"
+      image: "https://assets.datacamp.com/production/repositories/6071/datasets/85c3812b5d35b783cddd8e53f51c8575b5a55b90/quicksort_helper.gif"
   utter_quicksort_resources:
     - text: "These are some helpful links to learn about the quicksort algorithm:\n\t- https://www.geeksforgeeks.org/quick-sort/\n\t- https://www.programiz.com/dsa/quick-sort ^That's all I've got today for quicksort. I'm always here if you want to learn about another algorithm! Talk to you later!"
 
