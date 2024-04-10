@@ -35,7 +35,7 @@ def api_call(request):
     if not debug:
         body = json.loads(request.body)
         message = body.get('message')
-        print("Received message from USER:", message)
+        print("Received message:", message)
 
         # Define the URL
         url = 'http://10.161.54.133:5005/webhooks/rest/webhook'
@@ -81,4 +81,6 @@ def api_call(request):
 
         return JsonResponse(responseCopy, safe=False)
     else:
-        return JsonResponse({'image': 'https://www.simplilearn.com/ice9/free_resources_article_thumb/Linear-Search-Algorithm-Soni/what-is-linear-search-algorithm.png', 'text': ['This is a visual of how it works.', 'Would you like to see additional resources?']}, safe=False)
+        return JsonResponse([
+            "Please stop texting me!<br>&emsp;&emsp;This is a test","I don't know who you are."
+        ], safe=False)

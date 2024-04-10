@@ -8,10 +8,10 @@
     color-scheme: light dark;
   }
 
-  .light { /* forces light color-scheme */
+  .light {
     color-scheme: light;
   }
-  .dark { /* forces dark color-scheme     margin: 10vh auto;*/
+  .dark {
     color-scheme: dark;
   }
   
@@ -91,6 +91,17 @@
     color: light-dark(#DB8451, #F2E7DC);
     background-color: light-dark(#F2E7DC, #DB8451);
   }
+
+  .svg-icon {
+    background-color: none;
+    position: relative;
+    top: .125em;
+    flex-shrink: 0;
+    height: 2em;
+    width: 2em;
+    fill: light-dark(#d99771, #DB8451);
+   transition: fill .3s;
+}
 
   .bottom-shadow{
     box-shadow: 0 -5px 20px light-dark(white, #252525);
@@ -179,6 +190,7 @@
  }
 
  .message-area .user{
+  color: light-dark(#F2E7DC, #252525);
   background-color: light-dark(#d99771, #DB8451);
   margin: 15px 0px;
   margin-left: auto;
