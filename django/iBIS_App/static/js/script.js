@@ -225,16 +225,14 @@ function sendMessage() {
                     // Start displaying messages with the first one
                     displayMessage(0);
 
-                    setTimeout(() =>{
-                        if (data.image){
-                            console.log(data.image);
-    
-                            const ibisImage = document.createElement('img');
-                            ibisImage.src = data.image;
-                            ibisImage.className = `ibis message ibis-image`;
-                            messageDiv.appendChild(ibisImage);
-                        }
-                    }, data.text.length * waitTime * 5)
+                    if (data.image){
+                        console.log(data.image);
+
+                        const ibisImage = document.createElement('img');
+                        ibisImage.src = data.image;
+                        ibisImage.className = `ibis message ibis-image`;
+                        messageDiv.appendChild(ibisImage);
+                    }
 
                     area.appendChild(messageDiv);
                 } 
