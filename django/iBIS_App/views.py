@@ -31,7 +31,7 @@ def get_csrf_token(request):
     return request.COOKIES.get('csrftoken', '')
 
 def api_call(request):
-    debug = False
+    debug = True
     if not debug:
         body = json.loads(request.body)
         message = body.get('message')
@@ -81,6 +81,4 @@ def api_call(request):
 
         return JsonResponse(responseCopy, safe=False)
     else:
-        return JsonResponse([
-            "Please stop texting me!<br>&emsp;&emsp;This is a test","I don't know who you are."
-        ], safe=False)
+        return JsonResponse({'recipient_id': 'User', 'text': ['Here is the pseudocode:<br>','Do you want to see a visual?'], 'image': 'https://miro.medium.com/v2/resize:fit:1400/1*vaVmPAMpElIKI6QgYD5QBg.png'}, safe=False)

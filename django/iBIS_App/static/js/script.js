@@ -50,7 +50,7 @@ function sendMessage() {
 
     var waitTime = 80;
 
-    debug = flase;
+    debug = false;
     
     // if there is a message to send
     if(message.value){
