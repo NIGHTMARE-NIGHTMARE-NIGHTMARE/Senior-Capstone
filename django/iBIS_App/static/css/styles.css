@@ -99,9 +99,23 @@
     flex-shrink: 0;
     height: 2em;
     width: 2em;
-    fill: light-dark(#d99771, #DB8451);
+    fill: #F2E7DC;
    transition: fill .3s;
-}
+  }
+
+  button{
+    background: transparent;
+    border: none;
+  }
+
+  button:hover{
+    background: light-dark(#F2E7DC, #DB8451);
+  }
+
+  .svg-icon:hover{
+    fill: light-dark(#d99771, #F2E7DC);
+  }
+
 
   .bottom-shadow{
     box-shadow: 0 -5px 20px light-dark(white, #252525);
