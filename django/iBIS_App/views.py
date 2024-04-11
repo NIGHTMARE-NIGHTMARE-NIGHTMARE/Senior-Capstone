@@ -35,7 +35,7 @@ def get_csrf_token(request):
     return request.COOKIES.get('csrftoken', '')
 
 def api_call(request):
-    debug = False
+    debug = True
     if not debug:
         body = json.loads(request.body)
         message = body.get('message')

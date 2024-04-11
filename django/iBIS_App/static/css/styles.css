@@ -50,6 +50,10 @@
     top: 0;
     align-items: center;
     box-shadow: 0 0 0.75rem light-dark(#d99771, #DB8451), 0 10px 20px light-dark(white, #252525);
+    @media (max-width: 726px){
+      justify-content: center;
+      padding-top: 20px;
+    }
   }
 
   .sticky-content img{
@@ -102,7 +106,6 @@
     width: 2em;
     fill: #F2E7DC;
     transition: 0.3s ease;
-   
   }
 
   button{
@@ -178,13 +181,15 @@
   display: flex;
   flex-direction: column;
   height: 70vh;
-  padding: 20px 45px;
+  padding: 30px 45px;
   padding-bottom: 5vh;
   overflow: scroll;
   overflow-x: visible;
   scrollbar-color: light-dark(#d99771, #DB8451) light-dark(white, #252525);
   scrollbar-width: thin;
-
+  @media (max-width: 786px){
+    padding: 30px 15px;
+  }
  }
 
  .message-area>div{
@@ -220,8 +225,7 @@
   display: flex;
   align-items: top;
   gap: 5px;
-  margin-left: -42px;
-  margin-bottom: -20px;
+  margin-bottom: -10px;
  }
  .name-logo img{
   background-color: #a84338;
@@ -231,7 +235,10 @@
  .ibis-top{
   font-size: 15px;
   color: #939393;
-  margin: 0;
+ }
+
+ .ibis-image{
+  max-height: 300px;
  }
 
  .error-message{
@@ -265,20 +272,3 @@
   100% { opacity: 1; }
 }
 
-@media only screen and (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    margin-right: 0;
-  }
-  
-  nav li {
-    font-size: 14px;
-    display: block;
-    padding: 0px;
-  }
-  nav a {
-    padding: 0px;
-    font-size: 16px;
-    text-decoration: none;
-  }
-}
