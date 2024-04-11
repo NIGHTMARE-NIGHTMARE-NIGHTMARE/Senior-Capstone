@@ -19,7 +19,7 @@
     overflow-wrap: break-word;
     background-color: light-dark(white, #252525);
     margin: 0;
-    
+    overflow: hidden;
   }
 
   .main{
@@ -52,7 +52,7 @@
     box-shadow: 0 0 0.75rem light-dark(#d99771, #DB8451), 0 10px 20px light-dark(white, #252525);
     @media (max-width: 726px){
       justify-content: center;
-      padding-top: 20px;
+      padding: 10px;
     }
   }
 
@@ -90,11 +90,13 @@
     font-size: 24px;
     text-decoration: none;
     transition: 0.3s ease;
+    @media (max-width: 726px){
+      padding: 10px;
+    }
   }
 
   nav a:hover {
-    color: light-dark(#DB8451, #F2E7DC);
-    background-color: light-dark(#F2E7DC, #DB8451);
+    color: light-dark(#a84338, #DB8451);
   }
 
   .svg-icon {
@@ -141,7 +143,7 @@
          
  .msg-inputs textarea {
    font-size: 18px;
-   width: 95%;
+   width: 90%;
    overflow-wrap: break-word;
    background-color: light-dark(#d99771, #1c1c1c);
    color: light-dark(#F2E7DC, #DB8451);
@@ -163,7 +165,7 @@
      background-color: light-dark(#d99771, #1c1c1c); 
      color: light-dark(#F2E7DC, #DB8451);
      border: 2px solid light-dark(#F2E7DC, #DB8451);
-     width: 5vw;
+     width: 10%;
      overflow: hidden;
      justify-content: center;
      border-radius: 0 5px 5px 0;
