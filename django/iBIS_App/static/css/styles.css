@@ -3,7 +3,7 @@
   }
   
   :root{
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 100%;
     color-scheme: light dark;
   }
@@ -100,7 +100,7 @@
     height: 2em;
     width: 2em;
     fill: #F2E7DC;
-   transition: fill .3s;
+    transition: fill .3s;
   }
 
   button{

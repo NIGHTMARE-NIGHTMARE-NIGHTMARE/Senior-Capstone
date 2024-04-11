@@ -17,13 +17,13 @@ entities:
 responses:
   utter_goodbye:
     - text: "Goodbye! If you have any more questions, feel free to ask."
-    - text: "See ya! I am always here if you have more questions"
+    - text: "See ya! I am always here if you have more questions."
     - text: "Nice talking to you! If you want to learn more, you know where to find me."
 
   utter_i_am_a_bot:
-    - text: "I am a bot. I am doing the best I can..."
-    - text: "I am a bot. You need to relax..."
-    - text: "Look, I am a simple bot. You know this already..."
+    - text: "I am a bot. I am doing the best I can...please get back to the subject."
+    - text: "I am a bot. You need to relax...and get back to the lesson."
+    - text: "Look, I am a simple bot. You know this already...now back to algorithms."
 
   utter_out_of_scope:
     - text: "That is out of the scope of this lesson. Please get back on track you slacker."
@@ -59,7 +59,7 @@ responses:
     - text: "These are some helpful links to learn about the quicksort algorithm:\n\t- https://www.geeksforgeeks.org/quick-sort/\n\t- https://www.programiz.com/dsa/quick-sort ^That's all I've got today for quicksort. I'm always here if you want to learn about another algorithm! Talk to you later!"
 
   utter_bubble_def:
-    - text: "Bubble Sort can be defined as:^A simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm gets its name from the way smaller or larger elements \"bubble up\" to the top of the list.^Should I go over a code example?"
+    - text: "Bubble Sort can be defined as:^A simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm gets its name from the way smaller or larger elements \"bubble up\" to the top of the list.^Should I provide some more information about it?"
 
 
 slots:
@@ -76,4 +76,4 @@ slots:
 
 session_config:
   session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  carry_over_slots_to_new_session: false
