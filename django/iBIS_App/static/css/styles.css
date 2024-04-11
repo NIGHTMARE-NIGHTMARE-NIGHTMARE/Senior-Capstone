@@ -85,6 +85,7 @@
     font-weight: 400; 
     font-size: 24px;
     text-decoration: none;
+    transition: 0.3s ease;
   }
 
   nav a:hover {
@@ -100,7 +101,8 @@
     height: 2em;
     width: 2em;
     fill: #F2E7DC;
-    transition: fill .3s;
+    transition: 0.3s ease;
+   
   }
 
   button{
@@ -108,12 +110,8 @@
     border: none;
   }
 
-  button:hover{
-    background: light-dark(#F2E7DC, #DB8451);
-  }
-
   .svg-icon:hover{
-    fill: light-dark(#d99771, #F2E7DC);
+    fill: light-dark(#a84338, #DB8451);
   }
 
 
@@ -166,28 +164,30 @@
      overflow: hidden;
      justify-content: center;
      border-radius: 0 5px 5px 0;
+     transition: 0.3s ease;
  }
    
  .send-btn:hover {
    background-color: light-dark(#F2E7DC, #DB8451);
    color: light-dark(#d99771, #F2E7DC);
    cursor: pointer;
+   
  }
 
  .message-area{
   display: flex;
   flex-direction: column;
   height: 70vh;
-  padding: 20px 20px;
+  padding: 20px 100px;
   padding-bottom: 5vh;
   overflow: scroll;
-  overflow-x: hidden;
+  overflow-x: visible;
   scrollbar-color: light-dark(#d99771, #DB8451) light-dark(white, #252525);
   scrollbar-width: thin;
 
  }
 
- .message-area div{
+ .message-area>div{
   display: flex;
   flex-direction: column;
  }
@@ -208,6 +208,7 @@
   background-color: light-dark(#d99771, #DB8451);
   margin: 15px 0px;
   margin-left: auto;
+
  }
 
  .message-area .ibis{
@@ -215,6 +216,18 @@
   margin-right: auto;
  }
 
+ .name-logo {
+  display: flex;
+  align-items: top;
+  gap: 5px;
+  margin-left: -42px;
+  margin-bottom: -20px;
+ }
+ .name-logo img{
+  background-color: #a84338;
+  border-radius: 50%;
+  padding: 3px;
+ }
  .ibis-top{
   font-size: 15px;
   color: #939393;
@@ -247,6 +260,10 @@
   margin: 0;
  }
 
+ @keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 @media only screen and (max-width: 600px) {
   nav ul {

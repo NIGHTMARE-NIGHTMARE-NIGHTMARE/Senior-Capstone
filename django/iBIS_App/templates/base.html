@@ -15,7 +15,7 @@
 
         <header>
             <section class="sticky-content">
-                <img id="logo" src="{% static 'graphic/ibis-graphics-vectors_darkmode-logowtext.png' %}" alt="THIS IS iBIS" height="60">
+                <img id="logo" src="{% static 'graphic/logo_lightmode-logowtext.png' %}" alt="THIS IS iBIS" height="60">
                 <nav>
                     <ul>
                         <li><a href="/home">Chat</a></li>
@@ -34,18 +34,14 @@
         <script>
             function toggleMode() {
                 var element = document.body;
-                var logo = document.getElementById('logo');
                 if (element.classList.contains("light")) {
                     element.classList.replace("light", "dark");
-                    logo.src = "{% static 'graphic/ibis-graphics-vectors_darkmode-logowtext.png' %}";
                 } 
                 else if (element.classList.contains("dark")) {
                     element.classList.replace("dark", "light");
-                    logo.src = "{% static 'graphic/ibis-graphics-vectors_lightmode-logowtext.png' %}";
                 } 
                 else {
                     element.classList.add("dark");
-                    logo.src = "{% static 'graphic/ibis-graphics-vectors_lightmode-logowtext.png' %}";
                 }
             }
 
