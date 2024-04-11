@@ -1,0 +1,4 @@
+python 3.8.0
+pip 24.0
+rasa 3.6.17
+spaCy 3.7.4
