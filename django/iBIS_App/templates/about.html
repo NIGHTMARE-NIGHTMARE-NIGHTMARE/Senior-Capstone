@@ -24,7 +24,7 @@
         } */
 
         .content {
-        text-align: left;
+        text-align: center;
         }
 
         .intro {
@@ -61,7 +61,8 @@
         background-color: var(--light-cream);
         color: var(--gray);
         padding: 20px;
-        padding-top: 0px;
+        /* padding-top: 0px; */
+        border-radius: 50px;
         }
 
         #member{
@@ -158,18 +159,27 @@
         margin: 5px;
         }
 
-        .about-main {
+        main {
             display: flex;
             flex-direction: column;
             color: light-dark(#252525, #F2E7DC);
             height: 80vh;
             padding: 20px 20px;
             padding-bottom: 5vh;
-            overflow: scroll;
-            overflow-x: hidden;
             scrollbar-color: light-dark(#d99771, #DB8451) light-dark(white, #252525);
             scrollbar-width: thin;
             border-radius: 5px;
+        }
+
+        .about-main{
+            padding: 20px;
+        }
+
+        hr{
+        width: 80%;
+        margin: 25px auto;
+        background-color: var(--gray);
+        border-radius: 5px;
         }
     </style>
 </head>
