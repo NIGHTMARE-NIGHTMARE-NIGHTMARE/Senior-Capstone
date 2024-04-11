@@ -3,7 +3,7 @@
   }
   
   :root{
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 100%;
     color-scheme: light dark;
   }

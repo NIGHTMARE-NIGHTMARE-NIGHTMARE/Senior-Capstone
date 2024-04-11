@@ -59,6 +59,7 @@ nlu:
       - i guess
       - yes please
       - i'd like that
+      - please and thanks
 
   - intent: deny
     examples: |
@@ -81,6 +82,7 @@ nlu:
       - no i'm good
       - maybe later
       - not at this time
+      - nah i'm good
 
   - intent: bot_challenge
     examples: |
@@ -155,15 +157,6 @@ entities:
 
   - algorithm:
     examples: |
-      - binary
       - linear
-      - bfs
-      - dfs
-      - bredth first
-      - dfs
-      - depth first
       - quicksort
-      - quick 
-      - heap 
-      - merge 
       - bubble 
