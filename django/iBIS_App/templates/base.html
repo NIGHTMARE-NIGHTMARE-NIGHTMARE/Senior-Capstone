@@ -36,16 +36,26 @@
                 var element = document.body;
                 if (element.classList.contains("light")) {
                     element.classList.replace("light", "dark");
-                } 
-                else if (element.classList.contains("dark")) {
+                } else if (element.classList.contains("dark")) {
                     element.classList.replace("dark", "light");
-                } 
-                else {
+                } else {
                     element.classList.add("dark");
                 }
             }
 
+            function setInitialTheme() {
+                var prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var element = document.body;
+
+                if (prefersDarkMode) {
+                    element.classList.add("dark");
+                } else {
+                    element.classList.add("light");
+                }
+            }
+
             document.addEventListener('DOMContentLoaded', function() {
+                setInitialTheme();
                 document.getElementById('colorModeButton').addEventListener('click', toggleMode);
             });
         </script>
