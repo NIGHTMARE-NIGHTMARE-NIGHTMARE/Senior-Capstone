@@ -35,14 +35,14 @@ def get_csrf_token(request):
     return request.COOKIES.get('csrftoken', '')
 
 def api_call(request):
-    debug = True
+    debug = False
     if not debug:
         body = json.loads(request.body)
         message = body.get('message')
         print("Received message:", message)
 
         # Define the URL
-        url = 'http://10.161.54.133:5005/webhooks/rest/webhook'
+        url = 'http://10.161.31.175:5005/webhooks/rest/webhook'
 
         # Create the headers with Content-Type and X-CSRFToken
         headers = {
